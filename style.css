@@ -9,10 +9,52 @@ body {
   text-align: center;
 }
 
+/* 🔥 FIX IMPORTANT */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
+/* =========================
+   PAGE SYSTEM (🔥 FIX)
+========================= */
+
+#login,
+#dashboard,
+#cardsPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/* LOGIN */
+#login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* DASHBOARD */
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARDS */
+#cardsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   TITLES
+========================= */
 h1, h2 {
   color: #a855f7;
   text-shadow: 0 0 20px #a855f7;
@@ -54,21 +96,6 @@ input:focus {
 }
 
 /* =========================
-   LOGIN
-========================= */
-#login {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#login h1 {
-  margin-bottom: 20px;
-}
-
-/* =========================
    LOADING
 ========================= */
 #loading {
@@ -95,10 +122,8 @@ input:focus {
   padding: 20px;
   display: inline-block;
   border-radius: 15px;
-
   background: rgba(255,255,255,0.05);
   box-shadow: 0 0 15px rgba(124,58,237,0.4);
-
   cursor: pointer;
   transition: 0.2s;
 }
@@ -115,9 +140,6 @@ input:focus {
 /* =========================
    CARD SYSTEM
 ========================= */
-/* =========================
-   CARD SYSTEM (FIX FINAL)
-========================= */
 
 .card {
   width: 320px;
@@ -131,7 +153,6 @@ input:focus {
   width: 100%;
   height: 100%;
   position: relative;
-
   transform-style: preserve-3d;
   transition: transform 0.6s;
 }
@@ -156,18 +177,11 @@ input:focus {
   -webkit-backface-visibility: hidden;
 }
 
-#cardsPage {
-  display: block;
-  margin-top: 20px;
-}
-
-/* FACE AVANT */
 .front {
   transform: rotateY(0deg);
-  z-index: 2; /* 🔥 empêche bleed */
+  z-index: 2;
 }
 
-/* FACE ARRIÈRE */
 .card-back {
   transform: rotateY(180deg);
 }
