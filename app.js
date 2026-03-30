@@ -110,20 +110,6 @@ function goBack() {
     document.getElementById("dashboard").classList.remove("hidden");
 }
 
-function addCard() {
-    const subject = prompt("Matière ?");
-    const question = prompt("Question ?");
-    const answer = prompt("Réponse ?");
-
-    if (!subject || !question || !answer) return;
-
-    const data = getCards();
-    data.push({ subject, question, answer });
-
-    saveCards(data);
-    loadSubjects();
-}
-
 document.addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
         if (!document.getElementById("login").classList.contains("hidden")) {
