@@ -2,10 +2,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "TON_API_KEY",
-  authDomain: "TON_PROJECT.firebaseapp.com",
+  apiKey: "AIzaSyAv7t3t8hpAxPbrA2IVVuk2lwXJcI-Pfhs",
+  authDomain: "memocardio-2f462.firebaseapp.com",
   projectId: "memocardio-2f462",
-  appId: "TON_APP_ID"
+  appId: "1:526966657010:web:50e7b908aa13926456e56b"
 };
 
 const app = initializeApp(firebaseConfig);
