@@ -7,28 +7,36 @@
 </head>
 <body>
 
+<!-- 🔐 LOGIN -->
 <div id="login">
   <h1>MemoGlow</h1>
   <input type="password" id="password" placeholder="Mot de passe">
   <button onclick="login()">Entrer</button>
 </div>
 
+<!-- 📚 DASHBOARD -->
 <div id="dashboard" class="hidden">
   <h2>Matières</h2>
   <button onclick="addCard()">+ Ajouter</button>
   <div id="subjects"></div>
 </div>
 
+<!-- 🧠 CARDS -->
 <div id="cardsPage" class="hidden">
   <button onclick="goBack()">⬅ Retour</button>
+
   <div id="card" class="card" onclick="flipCard()">
-    <div class="front"></div>
-    <div class="back"></div>
+    <div class="card-inner">
+      <div class="card-face front"></div>
+      <div class="card-face card-back back"></div>
+    </div>
   </div>
+
   <button onclick="nextCard()">Suivant</button>
 </div>
 
 <script src="data.js"></script>
 <script src="app.js"></script>
+
 </body>
 </html>
