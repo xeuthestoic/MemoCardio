@@ -144,25 +144,16 @@ input:focus {
   position: absolute;
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 20px;
   text-align: center;
-
   border-radius: 20px;
-
   background: rgba(255,255,255,0.05);
   box-shadow: 0 0 25px rgba(124,58,237,0.7);
-
-  /* 🔥 FIX CRITIQUE */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-
-  /* 🔥 FIX FIREFOX */
-  transform-style: preserve-3d;
 }
 
 /* FACE AVANT */
