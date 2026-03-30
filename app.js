@@ -5,9 +5,8 @@ let cards = [];
 let currentIndex = 0;
 
 function initData() {
-    if (!localStorage.getItem("cards")) {
-        localStorage.setItem("cards", JSON.stringify(DEFAULT_CARDS));
-    }
+    console.log("RESET DATA");
+    localStorage.setItem("cards", JSON.stringify(DEFAULT_CARDS));
 }
 
 function getCards() {
