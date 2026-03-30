@@ -37,9 +37,10 @@ function login() {
         .then(() => {
             initData();
 
-        document.getElementById("login").classList.add("hidden");
-        document.getElementById("dashboard").classList.remove("hidden");
-        document.getElementById("cardsPage").classList.add("hidden");
+            // 🔥 FIX : uniquement classList
+            document.getElementById("login").classList.add("hidden");
+            document.getElementById("dashboard").classList.remove("hidden");
+            document.getElementById("cardsPage").classList.add("hidden");
 
             loadSubjects();
         })
