@@ -21,12 +21,13 @@ function saveCards(data) {
 async function login() {
     const username = document.getElementById("password").value;
 
-    // 🔥 convert pseudo → email
     const email = username + "@memoglow.app";
-    const password = "123456"; // mets le vrai mdp que t'as choisi
+    const password = "123456";
 
     try {
         await signInWithEmailAndPassword(auth, email, password);
+
+        initData(); // 🔥 AJOUTE ÇA
 
         document.getElementById("login").classList.add("hidden");
         document.getElementById("dashboard").classList.remove("hidden");
