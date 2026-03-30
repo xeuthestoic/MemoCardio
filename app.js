@@ -139,6 +139,7 @@ document.addEventListener("keydown", function(e) {
 });
 
 initData();
+document.getElementById("loginBtn").addEventListener("click", login);
 window.login = login;
 window.flipCard = flipCard;
 window.nextCard = nextCard;
