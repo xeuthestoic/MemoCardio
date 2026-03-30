@@ -1,6 +1,3 @@
-/* =========================
-   GLOBAL
-========================= */
 body {
   margin: 0;
   font-family: Arial;
@@ -9,13 +6,8 @@ body {
   text-align: center;
 }
 
-/* 🔥 FIX IMPORTANT */
-.hidden {
-  display: none !important;
-}
-
 /* =========================
-   PAGE SYSTEM (🔥 FIX)
+   PAGES (🔥 FIX)
 ========================= */
 
 #login,
@@ -27,36 +19,13 @@ body {
   width: 100%;
   height: 100vh;
 
-  background: inherit;
+  display: none; /* 🔥 on contrôle en JS */
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* LOGIN */
-#login {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-/* DASHBOARD */
-#dashboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* CARDS */
-#cardsPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: radial-gradient(circle, #0f0f1a, #050508);
 }
 
 /* =========================
@@ -68,7 +37,7 @@ h1, h2 {
 }
 
 /* =========================
-   BUTTONS & INPUTS
+   BUTTONS
 ========================= */
 button {
   padding: 10px 20px;
@@ -82,13 +51,8 @@ button {
   transition: 0.2s;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
-button:active {
-  transform: scale(0.95);
-}
+button:hover { transform: scale(1.05); }
+button:active { transform: scale(0.95); }
 
 input {
   padding: 10px;
@@ -97,62 +61,25 @@ input {
   margin: 10px;
 }
 
-input:focus {
-  outline: none;
-  box-shadow: 0 0 10px #a855f7;
-}
-
-/* =========================
-   LOADING
-========================= */
-#loading {
-  margin-top: 10px;
-  color: #a855f7;
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 0.3; }
-  50% { opacity: 1; }
-  100% { opacity: 0.3; }
-}
-
 /* =========================
    SUBJECTS
 ========================= */
-#subjects {
-  margin-top: 20px;
-}
-
 #subjects div {
   margin: 10px;
   padding: 20px;
-  display: inline-block;
   border-radius: 15px;
   background: rgba(255,255,255,0.05);
   box-shadow: 0 0 15px rgba(124,58,237,0.4);
   cursor: pointer;
-  transition: 0.2s;
-}
-
-#subjects div:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(124,58,237,0.8);
-}
-
-#subjects div:active {
-  transform: scale(0.95);
 }
 
 /* =========================
-   CARD SYSTEM
+   CARD
 ========================= */
-
 .card {
   width: 320px;
   height: 200px;
   perspective: 1000px;
-  position: relative;
   cursor: pointer;
 }
 
@@ -175,66 +102,11 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  text-align: center;
   border-radius: 20px;
   background: rgba(255,255,255,0.05);
   box-shadow: 0 0 25px rgba(124,58,237,0.7);
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
-.front {
-  transform: rotateY(0deg);
-  z-index: 2;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 700px) {
-
-  body {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  input {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  button {
-    width: 90%;
-    max-width: 300px;
-    font-size: 16px;
-  }
-
-  #subjects div {
-    width: 90%;
-    display: block;
-    margin: 10px auto;
-    font-size: 18px;
-  }
-
-  .card-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .card {
-    width: 95%;
-    height: 180px;
-  }
-}
+.front { z-index: 2; }
+.card-back { transform: rotateY(180deg); }
