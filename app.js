@@ -37,8 +37,9 @@ function login() {
         .then(() => {
             initData();
 
-            document.getElementById("login").classList.add("hidden");
-            document.getElementById("dashboard").classList.remove("hidden");
+        document.getElementById("login").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+        document.getElementById("cardsPage").style.display = "none";
 
             loadSubjects();
         })
