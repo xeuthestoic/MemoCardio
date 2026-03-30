@@ -115,6 +115,12 @@ function addCard() {
     loadSubjects();
 }
 
+document.getElementById("login").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        login();
+    }
+});
+
 initData();
 window.login = login;
 window.flipCard = flipCard;
