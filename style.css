@@ -188,3 +188,26 @@ button:active {
 #subjects div:active {
   transform: scale(0.95);
 }
+
+/* 📱 LOGIN FULL SCREEN MOBILE */
+#login {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 espace propre */
+#login h1 {
+  margin-bottom: 20px;
+}
+
+#login input {
+  margin: 10px 0;
+}
+
+#login button {
+  margin-top: 15px;
+}
