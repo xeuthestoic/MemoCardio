@@ -143,9 +143,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
-document.getElementById("login").classList.remove("hidden");
-document.getElementById("dashboard").classList.add("hidden");
-document.getElementById("cardsPage").classList.add("hidden");
 window.login = login;
 window.flipCard = flipCard;
 window.nextCard = nextCard;
