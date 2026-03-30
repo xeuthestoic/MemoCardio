@@ -26,16 +26,22 @@
 
 <!-- 🧠 CARDS -->
 <div id="cardsPage" class="hidden">
-  <button onclick="goBack()">⬅ Retour</button>
 
-  <div id="card" class="card" onclick="flipCard()">
-    <div class="card-inner">
-      <div class="card-face front"></div>
-      <div class="card-face card-back"></div>
+  <div class="card-container">
+
+    <button onclick="goBack()">⬅ Retour</button>
+
+    <div id="card" class="card" onclick="flipCard()">
+      <div class="card-inner">
+        <div class="card-face front"></div>
+        <div class="card-face card-back"></div>
+      </div>
     </div>
+
+    <button onclick="nextCard()">Suivant ➡</button>
+
   </div>
 
-  <button onclick="nextCard()">Suivant</button>
 </div>
 
 <script src="data.js"></script>
