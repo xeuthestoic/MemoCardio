@@ -42,13 +42,6 @@ function login() {
 
             loadSubjects();
         })
-        .catch((err) => {
-            console.log("❌ Erreur Firebase:", err.code);
-
-            document.getElementById("password").value = "";
-
-            alert(err.code);
-        })
         .finally(() => {
             document.getElementById("loading").classList.add("hidden");
         });
