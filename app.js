@@ -10,7 +10,12 @@ let currentIndex = 0;
    DATA
 ========================= */
 function initData() {
-    localStorage.setItem("cards", JSON.stringify(DEFAULT_CARDS));
+    const data = window.DEFAULT_CARDS;
+    if (!data) {
+        console.error("DEFAULT_CARDS manquant !");
+        return;
+    }
+    localStorage.setItem("cards", JSON.stringify(data));
 }
 
 function getCards() {
