@@ -18,7 +18,9 @@ function saveCards(data) {
     localStorage.setItem("cards", JSON.stringify(data));
 }
 
-async function login() {
+function login() {
+    console.log("LOGIN CLICK");
+
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
 
@@ -29,29 +31,27 @@ async function login() {
 
     const email = username + "@memocardio.com";
 
-    console.log("🔐 Login avec :", email);
-
     document.getElementById("loading").classList.remove("hidden");
 
-    try {
-        await signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            initData();
 
-        initData();
+            document.getElementById("login").classList.add("hidden");
+            document.getElementById("dashboard").classList.remove("hidden");
 
-        document.getElementById("login").classList.add("hidden");
-        document.getElementById("dashboard").classList.remove("hidden");
+            loadSubjects();
+        })
+        .catch((err) => {
+            console.log("❌ Erreur Firebase:", err.code);
 
-        loadSubjects();
+            document.getElementById("password").value = "";
 
-    } catch (err) {
-        console.log("❌ Erreur:", err.code);
-
-        document.getElementById("password").value = "";
-
-        alert(err.code);
-    }
-
-    document.getElementById("loading").classList.add("hidden");
+            alert(err.code);
+        })
+        .finally(() => {
+            document.getElementById("loading").classList.add("hidden");
+        });
 }
 
 function loadSubjects() {
