@@ -7,9 +7,8 @@ body {
 }
 
 /* =========================
-   PAGES (🔥 FIX)
+   PAGES
 ========================= */
-
 #login,
 #dashboard,
 #cardsPage {
@@ -23,7 +22,6 @@ body {
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle, #0f0f1a, #050508);
-  /* 🔥 FIX FIREFOX 3D */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
@@ -50,7 +48,6 @@ button {
   box-shadow: 0 0 20px rgba(124,58,237,0.7);
   transition: 0.2s;
 }
-
 button:hover { transform: scale(1.05); }
 button:active { transform: scale(0.95); }
 
@@ -71,6 +68,21 @@ input {
   background: rgba(255,255,255,0.05);
   box-shadow: 0 0 15px rgba(124,58,237,0.4);
   cursor: pointer;
+  transition: 0.2s;
+}
+#subjects div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(124,58,237,0.8);
+}
+
+/* =========================
+   CARD CONTAINER
+========================= */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 /* =========================
@@ -88,8 +100,8 @@ input {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
   -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
 .card.flipped .card-inner {
@@ -103,12 +115,46 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
   border-radius: 20px;
   background: rgba(255,255,255,0.05);
   box-shadow: 0 0 25px rgba(124,58,237,0.7);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
-.front { z-index: 2; }
-.card-back { transform: rotateY(180deg); }
+.front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 700px) {
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  input {
+    width: 90%;
+    max-width: 300px;
+  }
+  button {
+    width: 90%;
+    max-width: 300px;
+    font-size: 16px;
+  }
+  #subjects div {
+    width: 90%;
+    font-size: 18px;
+  }
+  .card {
+    width: 95%;
+    height: 180px;
+  }
+}
