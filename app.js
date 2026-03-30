@@ -1,95 +1,91 @@
 import { auth } from "./firebase.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+const DEFAULT_CARDS = window.DEFAULT_CARDS;
+
 let cards = [];
 let currentIndex = 0;
 
+/* =========================
+   DATA
+========================= */
 function initData() {
-    console.log("RESET DATA");
     localStorage.setItem("cards", JSON.stringify(DEFAULT_CARDS));
 }
 
 function getCards() {
-    return JSON.parse(localStorage.getItem("cards"));
+    return JSON.parse(localStorage.getItem("cards")) || [];
 }
 
-function saveCards(data) {
-    localStorage.setItem("cards", JSON.stringify(data));
+/* =========================
+   NAVIGATION
+========================= */
+function showPage(page) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("dashboard").style.display = "none";
+    document.getElementById("cardsPage").style.display = "none";
+
+    document.getElementById(page).style.display = "flex";
 }
 
+/* =========================
+   LOGIN
+========================= */
 function login() {
-    console.log("LOGIN CLICK");
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
+
     if (!username || !password) {
         alert("Remplis tous les champs");
         return;
     }
+
     const email = username + "@memocardio.com";
-    document.getElementById("loading").classList.remove("hidden");
+    document.getElementById("loading").style.display = "block";
 
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        console.log("SUCCESS LOGIN:", userCredential);
-
-        document.getElementById("login").classList.add("hidden");
-        document.getElementById("dashboard").classList.remove("hidden");
-        document.getElementById("cardsPage").classList.add("hidden");
-
-        loadSubjects();
-    })
+        .then(() => {
+            showPage("dashboard");
+            loadSubjects();
+        })
         .catch((error) => {
-            console.error("Erreur login:", error.code, error.message);
-            const messages = {
-                "auth/user-not-found":         "Utilisateur introuvable.",
-                "auth/wrong-password":          "Mot de passe incorrect.",
-                "auth/invalid-email":           "Email invalide.",
-                "auth/too-many-requests":       "Trop de tentatives. Réessaie plus tard.",
-                "auth/network-request-failed":  "Erreur réseau.",
-                "auth/invalid-credential":      "Identifiants incorrects.",
-            };
-            alert(messages[error.code] || "Erreur : " + error.message);
+            alert(error.message);
         })
         .finally(() => {
-            document.getElementById("loading").classList.add("hidden");
+            document.getElementById("loading").style.display = "none";
         });
 }
 
+/* =========================
+   DASHBOARD
+========================= */
 function loadSubjects() {
     const data = getCards();
     const subjects = [...new Set(data.map(c => c.subject))];
+
     const container = document.getElementById("subjects");
     container.innerHTML = "";
+
     subjects.forEach(sub => {
         const div = document.createElement("div");
         div.innerText = sub;
-        div.addEventListener("click", function () {
-            openSubject(sub);
-        });
+        div.onclick = () => openSubject(sub);
         container.appendChild(div);
     });
 }
 
+/* =========================
+   CARDS
+========================= */
 function openSubject(subject) {
-    console.log("OPEN:", subject);
     cards = getCards().filter(c => c.subject === subject);
-    if (cards.length === 0) {
-        console.log("AUCUNE CARTE");
-        return;
-    }
-    for (let i = cards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [cards[i], cards[j]] = [cards[j], cards[i]];
-    }
     currentIndex = 0;
-    document.getElementById("dashboard").classList.add("hidden");
-    document.getElementById("cardsPage").classList.remove("hidden");
+    showPage("cardsPage");
     showCard();
 }
 
 function showCard() {
     const card = cards[currentIndex];
-    if (!card) return;
     document.querySelector(".front").innerText = card.question;
     document.querySelector(".card-back").innerText = card.answer;
     document.getElementById("card").classList.remove("flipped");
@@ -103,43 +99,28 @@ function nextCard() {
     currentIndex++;
     if (currentIndex >= cards.length) {
         alert("Terminé !");
-        goBack();
+        showPage("dashboard");
         return;
     }
     showCard();
 }
 
 function goBack() {
-    document.getElementById("cardsPage").classList.add("hidden");
-    document.getElementById("dashboard").classList.remove("hidden");
+    showPage("dashboard");
 }
 
-document.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-        if (!document.getElementById("login").classList.contains("hidden")) {
-            login();
-        }
-    }
-});
-
+/* =========================
+   INIT
+========================= */
 window.addEventListener("DOMContentLoaded", () => {
-
-    console.log("DOM READY");
-
     initData();
-
-    // 🔥 UI INIT
-    document.getElementById("login").classList.remove("hidden");
-    document.getElementById("dashboard").classList.add("hidden");
-    document.getElementById("cardsPage").classList.add("hidden");
-
-    // 🔥 EVENT LISTENER FIX
+    showPage("login");
     document.getElementById("loginBtn").addEventListener("click", login);
-
 });
 
-window.login = login;
+/* =========================
+   GLOBAL
+========================= */
 window.flipCard = flipCard;
 window.nextCard = nextCard;
 window.goBack = goBack;
-window.openSubject = openSubject;
