@@ -123,14 +123,6 @@ document.addEventListener("keydown", function(e) {
     }
 });
 
-function show(id) {
-    document.getElementById(id).classList.remove("hidden");
-}
-
-function hide(id) {
-    document.getElementById(id).classList.add("hidden");
-}
-
 initData();
 document.getElementById("loginBtn").addEventListener("click", login);
 window.login = login;
