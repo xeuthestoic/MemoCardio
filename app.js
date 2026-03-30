@@ -42,6 +42,12 @@ function loadSubjects() {
 
 function openSubject(subject) {
     cards = getCards().filter(c => c.subject === subject);
+
+    // 🔥 Shuffle (Fisher-Yates)
+    for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
     currentIndex = 0;
 
     document.getElementById("dashboard").classList.add("hidden");
