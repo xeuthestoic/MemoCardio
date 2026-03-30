@@ -27,15 +27,19 @@
 <!-- 🧠 CARDS -->
 <div id="cardsPage">
   <div class="card-container">
-
-    <button onclick="goBack()">⬅ Retour</button>
-
+    <div class="card-nav">
+      <button onclick="goBack()">⬅ Retour</button>
+      <button onclick="nextCard()">Suivant ➡</button>
+    </div>
     <div id="card" class="card" onclick="flipCard()">
       <div class="card-inner">
         <div class="card-face front"></div>
         <div class="card-face card-back"></div>
       </div>
     </div>
+    <p class="card-hint">Tape la carte pour retourner</p>
+  </div>
+</div>
 
     <button onclick="nextCard()">Suivant ➡</button>
 
