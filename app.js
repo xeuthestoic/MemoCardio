@@ -72,6 +72,7 @@ function openSubject(subject) {
 
 function showCard() {
     const card = cards[currentIndex];
+    if (!card) return;
 
     document.querySelector(".front").innerText = card.question;
     document.querySelector(".card-back").innerText = card.answer;
@@ -120,3 +121,6 @@ window.flipCard = flipCard;
 window.nextCard = nextCard;
 window.goBack = goBack;
 window.addCard = addCard;
+document.getElementById("dashboard").classList.add("hidden");
+document.getElementById("cardsPage").classList.add("hidden");
+document.getElementById("login").classList.remove("hidden");
