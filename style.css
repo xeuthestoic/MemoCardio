@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL
+========================= */
 body {
   margin: 0;
   font-family: Arial;
@@ -15,6 +18,9 @@ h1, h2 {
   text-shadow: 0 0 20px #a855f7;
 }
 
+/* =========================
+   BUTTONS & INPUTS
+========================= */
 button {
   padding: 10px 20px;
   background: #7c3aed;
@@ -24,6 +30,15 @@ button {
   cursor: pointer;
   margin: 10px;
   box-shadow: 0 0 20px rgba(124,58,237,0.7);
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 input {
@@ -33,10 +48,84 @@ input {
   margin: 10px;
 }
 
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+/* =========================
+   LOGIN
+========================= */
+#login {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#login h1 {
+  margin-bottom: 20px;
+}
+
+/* =========================
+   LOADING
+========================= */
+#loading {
+  margin-top: 10px;
+  color: #a855f7;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* =========================
+   SUBJECTS
+========================= */
+#subjects {
+  margin-top: 20px;
+}
+
+#subjects div {
+  margin: 10px;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 15px rgba(124,58,237,0.4);
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#subjects div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(124,58,237,0.8);
+}
+
+#subjects div:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   CARD SYSTEM
+========================= */
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
 .card {
   width: 320px;
   height: 200px;
-  margin: 50px auto;
   perspective: 1000px;
   position: relative;
 }
@@ -66,71 +155,28 @@ input {
   text-align: center;
 
   border-radius: 20px;
+
+  /* 🔥 FIX BUG TEXTE INVERSÉ */
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 
   background: rgba(255,255,255,0.05);
   box-shadow: 0 0 25px rgba(124,58,237,0.7);
 }
 
+/* FRONT = NORMAL */
+.front {
+  transform: rotateY(0deg);
+}
+
+/* BACK = ROTATED */
 .card-back {
   transform: rotateY(180deg);
 }
 
-.card-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-
-  margin-top: 50px;
-}
-
-@media (max-width: 600px) {
-  .card-container {
-    flex-direction: column;
-  }
-}
-
-input:focus {
-  outline: none;
-  box-shadow: 0 0 10px #a855f7;
-}
-
-#loading {
-  margin-top: 10px;
-  color: #a855f7;
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 0.3; }
-  50% { opacity: 1; }
-  100% { opacity: 0.3; }
-}
-
-#subjects {
-  margin-top: 20px;
-}
-
-#subjects div {
-  margin: 10px;
-  padding: 20px;
-  display: inline-block;
-  border-radius: 15px;
-
-  background: rgba(255,255,255,0.05);
-  box-shadow: 0 0 15px rgba(124,58,237,0.4);
-
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-#subjects div:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(124,58,237,0.8);
-}
-
-/* 📱 MOBILE OPTIMISATION */
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 700px) {
 
   body {
@@ -145,7 +191,17 @@ input:focus {
     font-size: 20px;
   }
 
-  /* 📚 sujets */
+  input {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  button {
+    width: 90%;
+    max-width: 300px;
+    font-size: 16px;
+  }
+
   #subjects div {
     width: 90%;
     display: block;
@@ -153,67 +209,13 @@ input:focus {
     font-size: 18px;
   }
 
-  /* 🧠 carte */
-  .card {
-    width: 95%;
-    height: 180px;
-    margin: 20px auto;
-  }
-
-  /* 📦 container */
   .card-container {
     flex-direction: column;
     gap: 15px;
   }
 
-  /* 🔘 boutons */
-  button {
-    width: 90%;
-    max-width: 300px;
-    font-size: 16px;
+  .card {
+    width: 95%;
+    height: 180px;
   }
-
-  /* 🔐 inputs */
-  input {
-    width: 90%;
-    max-width: 300px;
-  }
-}
-
-/* effet app mobile */
-button:active {
-  transform: scale(0.95);
-}
-
-#subjects div:active {
-  transform: scale(0.95);
-}
-
-/* 📱 LOGIN FULL SCREEN MOBILE */
-@media (max-width: 700px) {
-#login {
-  min-height: 100vh;
-  padding: 20px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 🔥 espace propre */
-#login h1 {
-  margin-bottom: 20px;
-}
-
-#login input {
-  width: 90%;
-  max-width: 300px;
-  margin: 10px 0;
-}
-
-#login button {
-  width: 90%;
-  max-width: 300px;
-  margin-top: 15px;
 }
