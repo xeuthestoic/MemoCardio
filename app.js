@@ -32,8 +32,6 @@ function login() {
     .then((userCredential) => {
         console.log("SUCCESS LOGIN:", userCredential);
 
-        initData();
-
         document.getElementById("login").classList.add("hidden");
         document.getElementById("dashboard").classList.remove("hidden");
         document.getElementById("cardsPage").classList.add("hidden");
