@@ -32,9 +32,9 @@ function login() {
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             initData();
-            document.getElementById("login").style.display = "none";
-            document.getElementById("dashboard").style.display = "block";
-            document.getElementById("cardsPage").style.display = "none";
+            document.getElementById("login").classList.add("hidden");
+            document.getElementById("dashboard").classList.remove("hidden");
+            document.getElementById("cardsPage").classList.add("hidden");
             loadSubjects();
         })
         .catch((error) => {
