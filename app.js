@@ -22,7 +22,7 @@ async function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const email = username + "@memoglow.app";
+    const email = username;
 
     // 🔥 show loading
     document.getElementById("loading").classList.remove("hidden");
