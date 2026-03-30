@@ -14,19 +14,18 @@
 
   <input type="text" id="username" placeholder="Username">
   <input type="password" id="password" placeholder="Mot de passe">
-  <div id="loading" class="hidden">Connexion...</div>
+  <div id="loading" style="display:none;">Connexion...</div>
   <button id="loginBtn">Entrer</button>
 </div>
 
 <!-- 📚 DASHBOARD -->
-<div id="dashboard" class="hidden">
+<div id="dashboard">
   <h2>Matières</h2>
   <div id="subjects"></div>
 </div>
 
 <!-- 🧠 CARDS -->
-<div id="cardsPage" class="hidden">
-
+<div id="cardsPage">
   <div class="card-container">
 
     <button onclick="goBack()">⬅ Retour</button>
@@ -41,7 +40,6 @@
     <button onclick="nextCard()">Suivant ➡</button>
 
   </div>
-
 </div>
 
 <script src="data.js"></script>
