@@ -73,7 +73,7 @@ function showCard() {
     const card = cards[currentIndex];
 
     document.querySelector(".front").innerText = card.question;
-    document.querySelector(".back").innerText = card.answer;
+    document.querySelector(".card-back").innerText = card.answer;
 
     document.getElementById("card").classList.remove("flipped");
 }
@@ -114,3 +114,8 @@ function addCard() {
 }
 
 initData();
+window.login = login;
+window.flipCard = flipCard;
+window.nextCard = nextCard;
+window.goBack = goBack;
+window.addCard = addCard;
