@@ -127,12 +127,25 @@ document.addEventListener("keydown", function(e) {
     }
 });
 
-initData();
+window.addEventListener("DOMContentLoaded", () => {
+
+    console.log("DOM READY");
+
+    initData();
+
+    // 🔥 UI INIT
+    document.getElementById("login").classList.remove("hidden");
+    document.getElementById("dashboard").classList.add("hidden");
+    document.getElementById("cardsPage").classList.add("hidden");
+
+    // 🔥 EVENT LISTENER FIX
+    document.getElementById("loginBtn").addEventListener("click", login);
+
+});
+
 document.getElementById("login").classList.remove("hidden");
 document.getElementById("dashboard").classList.add("hidden");
 document.getElementById("cardsPage").classList.add("hidden");
-
-document.getElementById("loginBtn").addEventListener("click", login);
 window.login = login;
 window.flipCard = flipCard;
 window.nextCard = nextCard;
