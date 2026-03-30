@@ -24,6 +24,9 @@ async function login() {
 
     const email = username + "@memoglow.app";
 
+    // 🔥 show loading
+    document.getElementById("loading").classList.remove("hidden");
+
     try {
         await signInWithEmailAndPassword(auth, email, password);
 
@@ -33,11 +36,14 @@ async function login() {
         document.getElementById("dashboard").classList.remove("hidden");
         loadSubjects();
 
-    catch (err) {
+    } catch (err) {
         document.getElementById("password").value = "";
         alert("Identifiants incorrects");
         console.error(err);
     }
+
+    // 🔥 hide loading
+    document.getElementById("loading").classList.add("hidden");
 }
 
 function loadSubjects() {
