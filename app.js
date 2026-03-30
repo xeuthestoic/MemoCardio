@@ -39,35 +39,15 @@ function login() {
         })
         .catch((error) => {
             console.error("Erreur login:", error.code, error.message);
-            // Messages lisibles selon le code Firebase
             const messages = {
-                "auth/user-not-found":    "Utilisateur introuvable.",
-                "auth/wrong-password":    "Mot de passe incorrect.",
-                "auth/invalid-email":     "Email invalide.",
-                "auth/too-many-requests": "Trop de tentatives. Réessaie plus tard.",
-                "auth/network-request-failed": "Erreur réseau.",
+                "auth/user-not-found":         "Utilisateur introuvable.",
+                "auth/wrong-password":          "Mot de passe incorrect.",
+                "auth/invalid-email":           "Email invalide.",
+                "auth/too-many-requests":       "Trop de tentatives. Réessaie plus tard.",
+                "auth/network-request-failed":  "Erreur réseau.",
+                "auth/invalid-credential":      "Identifiants incorrects.",
             };
             alert(messages[error.code] || "Erreur : " + error.message);
-        })
-        .finally(() => {
-            document.getElementById("loading").classList.add("hidden");
-        });
-}
-
-    const email = username + "@memocardio.com";
-
-    document.getElementById("loading").classList.remove("hidden");
-
-    signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            initData();
-
-            // 🔥 RESET PROPRE (important)
-            document.getElementById("login").className = "hidden";
-            document.getElementById("dashboard").className = "";
-            document.getElementById("cardsPage").className = "hidden";
-
-            loadSubjects();
         })
         .finally(() => {
             document.getElementById("loading").classList.add("hidden");
@@ -77,55 +57,40 @@ function login() {
 function loadSubjects() {
     const data = getCards();
     const subjects = [...new Set(data.map(c => c.subject))];
-
     const container = document.getElementById("subjects");
     container.innerHTML = "";
-
     subjects.forEach(sub => {
         const div = document.createElement("div");
         div.innerText = sub;
-
-        // 🔥 FIX EVENT LISTENER
         div.addEventListener("click", function () {
             openSubject(sub);
         });
-
         container.appendChild(div);
     });
 }
 
 function openSubject(subject) {
     console.log("OPEN:", subject);
-
     cards = getCards().filter(c => c.subject === subject);
-
     if (cards.length === 0) {
         console.log("AUCUNE CARTE");
         return;
     }
-
-    // shuffle
     for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [cards[i], cards[j]] = [cards[j], cards[i]];
     }
-
     currentIndex = 0;
-
-    // 🔥 RESET CLEAN
-    document.getElementById("dashboard").className = "hidden";
-    document.getElementById("cardsPage").className = "";
-
+    document.getElementById("dashboard").classList.add("hidden");
+    document.getElementById("cardsPage").classList.remove("hidden");
     showCard();
 }
 
 function showCard() {
     const card = cards[currentIndex];
     if (!card) return;
-
     document.querySelector(".front").innerText = card.question;
     document.querySelector(".card-back").innerText = card.answer;
-
     document.getElementById("card").classList.remove("flipped");
 }
 
@@ -135,13 +100,11 @@ function flipCard() {
 
 function nextCard() {
     currentIndex++;
-
     if (currentIndex >= cards.length) {
         alert("Terminé !");
         goBack();
         return;
     }
-
     showCard();
 }
 
