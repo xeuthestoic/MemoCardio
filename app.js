@@ -132,9 +132,7 @@ function addCard() {
 
 document.addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
-        const loginVisible = !document.getElementById("login").classList.contains("hidden");
-
-        if (loginVisible) {
+        if (!document.getElementById("login").classList.contains("hidden")) {
             login();
         }
     }
