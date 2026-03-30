@@ -122,9 +122,13 @@ function addCard() {
     loadSubjects();
 }
 
-document.getElementById("login").addEventListener("keydown", function(e) {
+document.addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
-        login();
+        const loginVisible = !document.getElementById("login").classList.contains("hidden");
+
+        if (loginVisible) {
+            login();
+        }
     }
 });
 
