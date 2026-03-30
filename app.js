@@ -37,9 +37,9 @@ function login() {
         .then(() => {
             initData();
 
-        document.getElementById("login").style.display = "none";
-        document.getElementById("dashboard").style.display = "block";
-        document.getElementById("cardsPage").style.display = "none";
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+        document.getElementById("cardsPage").classList.add("hidden");
 
             loadSubjects();
         })
@@ -122,6 +122,14 @@ document.addEventListener("keydown", function(e) {
         }
     }
 });
+
+function show(id) {
+    document.getElementById(id).classList.remove("hidden");
+}
+
+function hide(id) {
+    document.getElementById(id).classList.add("hidden");
+}
 
 initData();
 document.getElementById("loginBtn").addEventListener("click", login);
