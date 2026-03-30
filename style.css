@@ -76,6 +76,21 @@ input {
   transform: rotateY(180deg);
 }
 
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+  }
+}
+
 input:focus {
   outline: none;
   box-shadow: 0 0 10px #a855f7;
