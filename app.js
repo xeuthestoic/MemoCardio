@@ -37,10 +37,10 @@ function login() {
         .then(() => {
             initData();
 
-            // 🔥 FIX : uniquement classList
-            document.getElementById("login").classList.add("hidden");
-            document.getElementById("dashboard").classList.remove("hidden");
-            document.getElementById("cardsPage").classList.add("hidden");
+            // 🔥 RESET PROPRE (important)
+            document.getElementById("login").className = "hidden";
+            document.getElementById("dashboard").className = "";
+            document.getElementById("cardsPage").className = "hidden";
 
             loadSubjects();
         })
@@ -70,17 +70,26 @@ function loadSubjects() {
 }
 
 function openSubject(subject) {
+    console.log("OPEN:", subject);
+
     cards = getCards().filter(c => c.subject === subject);
 
-    // 🔥 Shuffle (Fisher-Yates)
+    if (cards.length === 0) {
+        console.log("AUCUNE CARTE");
+        return;
+    }
+
+    // shuffle
     for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [cards[i], cards[j]] = [cards[j], cards[i]];
     }
+
     currentIndex = 0;
 
-    document.getElementById("dashboard").classList.add("hidden");
-    document.getElementById("cardsPage").classList.remove("hidden");
+    // 🔥 RESET CLEAN
+    document.getElementById("dashboard").className = "hidden";
+    document.getElementById("cardsPage").className = "";
 
     showCard();
 }
