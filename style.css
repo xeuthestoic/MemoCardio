@@ -58,7 +58,7 @@ input:focus {
 ========================= */
 #login {
   min-height: 100vh;
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -154,6 +154,11 @@ input:focus {
   box-shadow: 0 0 25px rgba(124,58,237,0.7);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+#cardsPage {
+  display: block;
+  margin-top: 20px;
 }
 
 /* FACE AVANT */
