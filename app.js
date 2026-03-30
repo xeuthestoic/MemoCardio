@@ -58,7 +58,12 @@ function loadSubjects() {
     subjects.forEach(sub => {
         const div = document.createElement("div");
         div.innerText = sub;
-        ddiv.addEventListener("click", () => openSubject(sub));
+
+        // 🔥 FIX EVENT LISTENER
+        div.addEventListener("click", function () {
+            openSubject(sub);
+        });
+
         container.appendChild(div);
     });
 }
