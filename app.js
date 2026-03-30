@@ -31,16 +31,10 @@ function login() {
 
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            console.log("THEN EXÉCUTÉ");
-            console.log("login hidden?", document.getElementById("login").classList);
-            console.log("dashboard classes?", document.getElementById("dashboard").classList);
-    
             initData();
-            document.getElementById("login").classList.add("hidden");
-            document.getElementById("dashboard").classList.remove("hidden");
-            document.getElementById("cardsPage").classList.add("hidden");
-    
-            console.log("APRÈS MODIF dashboard classes?", document.getElementById("dashboard").classList);
+            document.getElementById("login").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+            document.getElementById("cardsPage").style.display = "none";
             loadSubjects();
         })
         .catch((error) => {
