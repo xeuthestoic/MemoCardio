@@ -190,8 +190,10 @@ button:active {
 }
 
 /* 📱 LOGIN FULL SCREEN MOBILE */
+@media (max-width: 700px) {
 #login {
   min-height: 100vh;
+  padding: 20px;
 
   display: flex;
   flex-direction: column;
@@ -205,9 +207,13 @@ button:active {
 }
 
 #login input {
+  width: 90%;
+  max-width: 300px;
   margin: 10px 0;
 }
 
 #login button {
+  width: 90%;
+  max-width: 300px;
   margin-top: 15px;
 }
