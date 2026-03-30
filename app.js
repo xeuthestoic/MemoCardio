@@ -128,12 +128,9 @@ document.addEventListener("keydown", function(e) {
 });
 
 initData();
-
-window.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("dashboard").classList.add("hidden");
-    document.getElementById("cardsPage").classList.add("hidden");
-    document.getElementById("login").classList.remove("hidden");
-});
+document.getElementById("login").classList.remove("hidden");
+document.getElementById("dashboard").classList.add("hidden");
+document.getElementById("cardsPage").classList.add("hidden");
 
 document.getElementById("loginBtn").addEventListener("click", login);
 window.login = login;
