@@ -30,13 +30,17 @@ function login() {
     document.getElementById("loading").classList.remove("hidden");
 
     signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            initData();
-            document.getElementById("login").classList.add("hidden");
-            document.getElementById("dashboard").classList.remove("hidden");
-            document.getElementById("cardsPage").classList.add("hidden");
-            loadSubjects();
-        })
+    .then((userCredential) => {
+        console.log("SUCCESS LOGIN:", userCredential);
+
+        initData();
+
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+        document.getElementById("cardsPage").classList.add("hidden");
+
+        loadSubjects();
+    })
         .catch((error) => {
             console.error("Erreur login:", error.code, error.message);
             const messages = {
