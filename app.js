@@ -15,13 +15,23 @@ function saveCards(data) {
     localStorage.setItem("cards", JSON.stringify(data));
 }
 
-function login() {
-    const pass = document.getElementById("password").value;
+async function login() {
+    const username = document.getElementById("password").value;
 
-    if (pass === "admin123") {
+    // 🔥 convert pseudo → email
+    const email = username + "@memoglow.app";
+    const password = "123456"; // mets le vrai mdp que t'as choisi
+
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+
         document.getElementById("login").classList.add("hidden");
         document.getElementById("dashboard").classList.remove("hidden");
         loadSubjects();
+
+    } catch (err) {
+        alert("Erreur login");
+        console.error(err);
     }
 }
 
