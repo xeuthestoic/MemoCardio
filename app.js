@@ -50,9 +50,10 @@ function login() {
 
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            showPage("dashboard");
-            loadSubjects();
-        })
+          initData();
+          showPage("dashboard");
+          loadSubjects();
+         })
         .catch((error) => {
             alert(error.message);
         })
