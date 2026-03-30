@@ -22,17 +22,9 @@ async function login() {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
 
-    catch (err) {
-    const email = document.getElementById("username").value + "@memocardio.com";
+    const email = username + "@memocardio.com";
 
-    console.log("❌ Login failed");
-    console.log("👉 Email utilisé :", email);
-    console.log("👉 Erreur Firebase :", err.code);
-
-    document.getElementById("password").value = "";
-
-    alert("Erreur: " + err.code);
-    }
+    console.log("🔐 Tentative login avec :", email);
 
     // 🔥 show loading
     document.getElementById("loading").classList.remove("hidden");
@@ -47,9 +39,13 @@ async function login() {
         loadSubjects();
 
     } catch (err) {
+        console.log("❌ Login failed");
+        console.log("👉 Email utilisé :", email);
+        console.log("👉 Erreur Firebase :", err.code);
+
         document.getElementById("password").value = "";
-        alert("Identifiants incorrects");
-        console.error(err);
+
+        alert("Erreur: " + err.code);
     }
 
     // 🔥 hide loading
