@@ -19,22 +19,22 @@ function saveCards(data) {
 }
 
 async function login() {
-    const username = document.getElementById("password").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
     const email = username + "@memoglow.app";
-    const password = "123456";
 
     try {
         await signInWithEmailAndPassword(auth, email, password);
 
-        initData(); // 🔥 AJOUTE ÇA
+        initData();
 
         document.getElementById("login").classList.add("hidden");
         document.getElementById("dashboard").classList.remove("hidden");
         loadSubjects();
 
     } catch (err) {
-        alert("Erreur login");
+        alert("Identifiants incorrects");
         console.error(err);
     }
 }
