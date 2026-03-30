@@ -20,14 +20,39 @@ function saveCards(data) {
 
 function login() {
     console.log("LOGIN CLICK");
-
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
-
     if (!username || !password) {
         alert("Remplis tous les champs");
         return;
     }
+    const email = username + "@memocardio.com";
+    document.getElementById("loading").classList.remove("hidden");
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            initData();
+            document.getElementById("login").className = "hidden";
+            document.getElementById("dashboard").className = "";
+            document.getElementById("cardsPage").className = "hidden";
+            loadSubjects();
+        })
+        .catch((error) => {
+            console.error("Erreur login:", error.code, error.message);
+            // Messages lisibles selon le code Firebase
+            const messages = {
+                "auth/user-not-found":    "Utilisateur introuvable.",
+                "auth/wrong-password":    "Mot de passe incorrect.",
+                "auth/invalid-email":     "Email invalide.",
+                "auth/too-many-requests": "Trop de tentatives. Réessaie plus tard.",
+                "auth/network-request-failed": "Erreur réseau.",
+            };
+            alert(messages[error.code] || "Erreur : " + error.message);
+        })
+        .finally(() => {
+            document.getElementById("loading").classList.add("hidden");
+        });
+}
 
     const email = username + "@memocardio.com";
 
