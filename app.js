@@ -22,7 +22,17 @@ async function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const email = username + "@memocardio.com";
+    catch (err) {
+    const email = document.getElementById("username").value + "@memocardio.com";
+
+    console.log("❌ Login failed");
+    console.log("👉 Email utilisé :", email);
+    console.log("👉 Erreur Firebase :", err.code);
+
+    document.getElementById("password").value = "";
+
+    alert("Erreur: " + err.code);
+    }
 
     // 🔥 show loading
     document.getElementById("loading").classList.remove("hidden");
