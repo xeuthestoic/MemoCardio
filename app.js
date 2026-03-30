@@ -22,7 +22,7 @@ async function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const email = username;
+    const email = username + "@memocardio.com";
 
     // 🔥 show loading
     document.getElementById("loading").classList.remove("hidden");
