@@ -86,6 +86,13 @@ function loadSubjects() {
 function openSubject(subject) {
     cards = getCards().filter(c => c.subject === subject);
     currentIndex = 0;
+
+    // 🔀 SHUFFLE
+    for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+
     showPage("cardsPage");
     showCard();
 }
