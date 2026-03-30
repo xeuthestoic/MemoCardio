@@ -33,7 +33,8 @@ async function login() {
         document.getElementById("dashboard").classList.remove("hidden");
         loadSubjects();
 
-    } catch (err) {
+    catch (err) {
+        document.getElementById("password").value = "";
         alert("Identifiants incorrects");
         console.error(err);
     }
