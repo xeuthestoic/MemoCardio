@@ -129,6 +129,13 @@ window.addEventListener("DOMContentLoaded", () => {
     initData();
     showPage("login");
     document.getElementById("loginBtn").addEventListener("click", login);
+
+    // 🔥 ENTER pour login
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && document.getElementById("login").style.display !== "none") {
+            login();
+        }
+    });
 });
 
 /* =========================
