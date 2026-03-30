@@ -22,11 +22,15 @@ async function login() {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
 
+    if (!username || !password) {
+        alert("Remplis tous les champs");
+        return;
+    }
+
     const email = username + "@memocardio.com";
 
-    console.log("🔐 Tentative login avec :", email);
+    console.log("🔐 Login avec :", email);
 
-    // 🔥 show loading
     document.getElementById("loading").classList.remove("hidden");
 
     try {
@@ -36,19 +40,17 @@ async function login() {
 
         document.getElementById("login").classList.add("hidden");
         document.getElementById("dashboard").classList.remove("hidden");
+
         loadSubjects();
 
     } catch (err) {
-        console.log("❌ Login failed");
-        console.log("👉 Email utilisé :", email);
-        console.log("👉 Erreur Firebase :", err.code);
+        console.log("❌ Erreur:", err.code);
 
         document.getElementById("password").value = "";
 
-        alert("Erreur: " + err.code);
+        alert(err.code);
     }
 
-    // 🔥 hide loading
     document.getElementById("loading").classList.add("hidden");
 }
 
