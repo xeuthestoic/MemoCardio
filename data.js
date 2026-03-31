@@ -206,7 +206,7 @@ window.DEFAULT_CARDS = [
 
   {
     subject: "Cyber",
-    question: "Budget de l’Intelligence Community en 2025 ?",
+    question: "Budget de l'Intelligence Community en 2025 ?",
     answer: "101.1 milliards de dollars"
   },
   {
@@ -216,17 +216,17 @@ window.DEFAULT_CARDS = [
   },
   {
     subject: "Cyber",
-    question: "Qu’est-ce que l’accord UKUSA ?",
+    question: "Qu'est-ce que l'accord UKUSA ?",
     answer: "Accord de coopération SIGINT entre 5 pays anglophones"
   },
   {
     subject: "Cyber",
-    question: "Milieu principal d’action de l’ONI ?",
+    question: "Milieu principal d'action de l'ONI ?",
     answer: "La mer et les océans"
   },
   {
     subject: "Cyber",
-    question: "Nombre de services dans l’Intelligence Community ?",
+    question: "Nombre de services dans l'Intelligence Community ?",
     answer: "18"
   },
 
@@ -258,7 +258,7 @@ window.DEFAULT_CARDS = [
 
   {
     subject: "Cyber",
-    question: "Nombre d’agents de la DNRT ?",
+    question: "Nombre d'agents de la DNRT ?",
     answer: "3000"
   },
   {
@@ -273,7 +273,7 @@ window.DEFAULT_CARDS = [
   },
   {
     subject: "Cyber",
-    question: "Zone d’action du SNRP ?",
+    question: "Zone d'action du SNRP ?",
     answer: "France métropolitaine et outre-mer"
   },
   {
@@ -320,7 +320,7 @@ window.DEFAULT_CARDS = [
   },
   {
     subject: "Cyber",
-    question: "Société privée liée à l’État russe ?",
+    question: "Société privée liée à l'État russe ?",
     answer: "Wagner"
   },
   {
@@ -332,7 +332,7 @@ window.DEFAULT_CARDS = [
   {
     subject: "Cyber",
     question: "Statut du VEVAK ?",
-    answer: "Ministère civil d’État"
+    answer: "Ministère civil d'État"
   },
   {
     subject: "Cyber",
@@ -346,18 +346,18 @@ window.DEFAULT_CARDS = [
   },
   {
     subject: "Cyber",
-    question: "Année de création de l’IRGC ?",
+    question: "Année de création de l'IRGC ?",
     answer: "1979"
   },
   {
     subject: "Cyber",
-    question: "Nature de l’IRGC ?",
+    question: "Nature de l'IRGC ?",
     answer: "Organisation militaire / paramilitaire"
   },
 
   {
     subject: "Cyber",
-    question: "Organisation à l’origine des services israéliens ?",
+    question: "Organisation à l'origine des services israéliens ?",
     answer: "Haganah"
   },
   {
@@ -400,6 +400,137 @@ window.DEFAULT_CARDS = [
     subject: "Cyber",
     question: "Directeur du MI5 (2020+) ?",
     answer: "Ken McCallum"
+  },
+
+  /* =========================
+     📚 L'ADVERSAIRE
+  ========================= */
+
+  // 📚 INFORMATIONS GÉNÉRALES
+  {
+    subject: "L'adversaire",
+    question: "Qui est l'auteur de L'Adversaire ?",
+    answer: "Emmanuel Carrère"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Quelle est la date de parution de L'Adversaire ?",
+    answer: "2000"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Citez un autre roman d'Emmanuel Carrère",
+    answer: "La Moustache"
+  },
+
+  // 👤 PERSONNAGES
+  {
+    subject: "L'adversaire",
+    question: "Qui est Luc Ladmiral ?",
+    answer: "Le meilleur ami de Jean-Claude Romand"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Quelle est la profession de Luc Ladmiral ?",
+    answer: "Médecin généraliste à Ferney-Voltaire"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Quel est le prénom de l'épouse de Luc Ladmiral ?",
+    answer: "Cécile"
+  },
+
+  // 📖 CONTEXTE & ANALYSE
+  {
+    subject: "L'adversaire",
+    question: "Pourquoi Carrère commence-t-il par Luc Ladmiral ?",
+    answer: "Pour montrer le choc et la perte de confiance face à la révélation"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Quel homme de lettres a vécu dans la même région que Romand ?",
+    answer: "Voltaire"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Quel livre Carrère envoie-t-il à Romand en prison ?",
+    answer: "Je suis vivant et vous êtes morts"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Carrère utilise-t-il un pseudonyme pour Romand ?",
+    answer: "Non"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Combien de temps met Romand à répondre à Carrère ?",
+    answer: "2 ans"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Comment Romand appelle-t-il ses meurtres ?",
+    answer: "La tragédie"
+  },
+
+  // 🔍 ÉLÉMENTS IMPORTANTS
+  {
+    subject: "L'adversaire",
+    question: "Quel souvenir inattendu est révélé à la fin du roman ?",
+    answer: "Les lettres affectueuses d'une institutrice (Mme Hio)"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Où se trouve l'OMS ?",
+    answer: "À Genève"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Quels éléments de la nature Carrère regrette-t-il de ne pas reconnaître ?",
+    answer: "Les arbres et les oiseaux"
+  },
+
+  // 🧠 ANALYSE DU ROMAN
+  {
+    subject: "L'adversaire",
+    question: "Pourquoi L'Adversaire a-t-il un intérêt policier ?",
+    answer: "Car il raconte une enquête et un crime réel"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Pourquoi le roman a-t-il un intérêt social ?",
+    answer: "Il montre les relations humaines et la société"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Pourquoi le roman a-t-il un intérêt psychologique ?",
+    answer: "Il analyse la personnalité et les mensonges de Romand"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Pourquoi le roman a-t-il un intérêt littéraire ?",
+    answer: "C'est un récit réel écrit de manière narrative"
+  },
+
+  // ⚠️ QUESTIONS PLUS PRÉCISES
+  {
+    subject: "L'adversaire",
+    question: "Que faisait Romand avant sa tentative de suicide ?",
+    answer: "Il écoutait une cassette vidéo et utilisait la télécommande"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Avec quel objet Florence a-t-elle eu le crâne fracassé ?",
+    answer: "Un rouleau à pâtisserie"
+  },
+  {
+    subject: "L'adversaire",
+    question: "À quoi se consacre Romand en prison à la fin du livre ?",
+    answer: "À la religion (Dieu et les prières)"
+  },
+  {
+    subject: "L'adversaire",
+    question: "Pourquoi l'aveu du meurtre du beau-père est plus difficile ?",
+    answer: "Car il n'avait pas été avoué au départ et est plus personnel"
   }
 
 ];
