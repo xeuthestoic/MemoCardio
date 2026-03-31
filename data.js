@@ -533,10 +533,10 @@ window.DEFAULT_CARDS = [
     answer: "Car il n'avait pas été avoué au départ et est plus personnel"
   }
 
- /* =========================
+  /* =========================
      🧠 Physique
   ========================= */
-[
+
   {
     subject: "Physique",
     question: "Quelle est la formule du pont diviseur de tension ?",
@@ -657,4 +657,5 @@ window.DEFAULT_CARDS = [
     question: "Pourquoi utiliser un circuit LC ?",
     answer: "Pour filtrer les parasites (HF ou DC)"
   }
+
 ];
