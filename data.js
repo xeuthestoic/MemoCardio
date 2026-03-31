@@ -1,204 +1,333 @@
 window.DEFAULT_CARDS = [
 
-  /* =========================
-     🔵 RÉSEAUX
-  ========================= */
+/* =========================
+   🌐 OSI — COUCHES 1 À 4
+========================= */
 
-  {
-    subject: "Réseaux",
-    question: "Quel est le rôle de la couche 4 (transport) ?",
-    answer: "Acheminer les données vers la bonne application"
-  },
-  {
-    subject: "Réseaux",
-    question: "Qu'est-ce qu'un port ?",
-    answer: "Un numéro identifiant une application (0 à 65535)"
-  },
-  {
-    subject: "Réseaux",
-    question: "Entre quelles entités communique la couche 4 ?",
-    answer: "Entre deux processus applicatifs"
-  },
-  {
-    subject: "Réseaux",
-    question: "Qu'est-ce que le multiplexage ?",
-    answer: "Permet à plusieurs applications d'utiliser le réseau"
-  },
-  {
-    subject: "Réseaux",
-    question: "À quoi sert la segmentation ?",
-    answer: "Découper les données en segments"
-  },
-  {
-    subject: "Réseaux",
-    question: "Qu'est-ce que le contrôle de flux ?",
-    answer: "Réguler la vitesse d'envoi"
-  },
-  {
-    subject: "Réseaux",
-    question: "Quel protocole gère la retransmission ?",
-    answer: "TCP"
-  },
-  {
-    subject: "Réseaux",
-    question: "Quel protocole gère la connexion ?",
-    answer: "TCP"
-  },
-  {
-    subject: "Réseaux",
-    question: "Quel protocole numérote les segments ?",
-    answer: "TCP"
-  },
-  {
-    subject: "Réseaux",
-    question: "UDP est-il fiable ?",
-    answer: "Non"
-  },
-  {
-    subject: "Réseaux",
-    question: "TCP est-il fiable ?",
-    answer: "Oui (ACK + retransmission)"
-  },
-  {
-    subject: "Réseaux",
-    question: "Quel protocole est le plus rapide ?",
-    answer: "UDP"
-  },
-  {
-    subject: "Réseaux",
-    question: "Quel protocole garantit l'ordre des paquets ?",
-    answer: "TCP"
-  },
-  {
-    subject: "Réseaux",
-    question: "UDP utilise-t-il un handshake ?",
-    answer: "Non"
-  },
-  {
-    subject: "Réseaux",
-    question: "TCP utilise-t-il un handshake ?",
-    answer: "Oui"
-  },
-  {
-    subject: "Réseaux",
-    question: "Taille de l'en-tête UDP ?",
-    answer: "8 octets"
-  },
-  {
-    subject: "Réseaux",
-    question: "Taille minimale en-tête TCP ?",
-    answer: "20 octets"
-  },
-  {
-    subject: "Réseaux",
-    question: "Étapes du 3-way handshake ?",
-    answer: "SYN → SYN-ACK → ACK"
-  },
-  {
-    subject: "Réseaux",
-    question: "Pourquoi 3 étapes ?",
-    answer: "Synchroniser les deux sens de communication"
-  },
-  {
-    subject: "Réseaux",
-    question: "Combien d'étapes pour fermer TCP ?",
-    answer: "4 étapes"
-  },
-  {
-    subject: "Réseaux",
-    question: "Pourquoi 4 étapes pour fermer ?",
-    answer: "Connexion bidirectionnelle"
-  },
-  {
-    subject: "Réseaux",
-    question: "SYN signifie ?",
-    answer: "Ouverture de connexion"
-  },
-  {
-    subject: "Réseaux",
-    question: "ACK signifie ?",
-    answer: "Accusé de réception"
-  },
-  {
-    subject: "Réseaux",
-    question: "FIN signifie ?",
-    answer: "Fermeture de connexion"
-  },
-  {
-    subject: "Réseaux",
-    question: "RST signifie ?",
-    answer: "Reset brutal"
-  },
-  {
-    subject: "Réseaux",
-    question: "PSH signifie ?",
-    answer: "Traitement immédiat des données"
-  },
-  {
-    subject: "Réseaux",
-    question: "À quoi sert le Sequence Number ?",
-    answer: "Remettre les paquets dans l'ordre"
-  },
-  {
-    subject: "Réseaux",
-    question: "À quoi sert le ACK Number ?",
-    answer: "Confirmer réception"
-  },
-  {
-    subject: "Réseaux",
-    question: "Quel champ gère le flux TCP ?",
-    answer: "Window Size"
-  },
-  {
-    subject: "Réseaux",
-    question: "Pourquoi il y a du bourrage en TCP ?",
-    answer: "Aligner sur 32 bits"
-  },
-  {
-    subject: "Réseaux",
-    question: "Pourquoi pas en UDP ?",
-    answer: "En-tête fixe"
-  },
-  {
-    subject: "Réseaux",
-    question: "HTTP utilise quel protocole ?",
-    answer: "TCP"
-  },
-  {
-    subject: "Réseaux",
-    question: "FTP utilise ?",
-    answer: "TCP"
-  },
-  {
-    subject: "Réseaux",
-    question: "DHCP utilise ?",
-    answer: "UDP"
-  },
-  {
-    subject: "Réseaux",
-    question: "SNMP utilise ?",
-    answer: "UDP"
-  },
-  {
-    subject: "Réseaux",
-    question: "Pourquoi les jeux utilisent UDP ?",
-    answer: "Moins de latence"
-  },
-  {
-    subject: "Réseaux",
-    question: "Que fait ufw deny in 22/tcp ?",
-    answer: "Bloque SSH entrant"
-  },
-  {
-    subject: "Réseaux",
-    question: "Que contient un log UFW ?",
-    answer: "IP source/destination, ports, protocole, flags"
-  },
-  {
-    subject: "Réseaux",
-    question: "Pourquoi un ping peut échouer ?",
-    answer: "ICMP bloqué en sortie"
-  },
+/* 🔵 COUCHE 4 — TRANSPORT */
+
+{
+  subject: "Réseaux",
+  question: "Quel est le rôle de la couche Transport ?",
+  answer: "Acheminer les données entre applications"
+},
+{
+  subject: "Réseaux",
+  question: "Entre quelles entités communique la couche Transport ?",
+  answer: "Entre deux processus applicatifs"
+},
+{
+  subject: "Réseaux",
+  question: "Quels protocoles sont utilisés en couche 4 ?",
+  answer: "TCP et UDP"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce qu'un port ?",
+  answer: "Un numéro identifiant une application (0 à 65535)"
+},
+{
+  subject: "Réseaux",
+  question: "Pourquoi utiliser des ports ?",
+  answer: "Permettre à plusieurs applications d'utiliser le réseau"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce que le multiplexage ?",
+  answer: "Faire passer plusieurs communications"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce que la segmentation ?",
+  answer: "Découper les données en segments"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce que le contrôle de flux ?",
+  answer: "Adapter la vitesse d'envoi"
+},
+{
+  subject: "Réseaux",
+  question: "TCP est-il fiable ?",
+  answer: "Oui"
+},
+{
+  subject: "Réseaux",
+  question: "UDP est-il fiable ?",
+  answer: "Non"
+},
+{
+  subject: "Réseaux",
+  question: "Quel protocole est le plus rapide ?",
+  answer: "UDP"
+},
+{
+  subject: "Réseaux",
+  question: "Quel protocole garantit l'ordre ?",
+  answer: "TCP"
+},
+{
+  subject: "Réseaux",
+  question: "TCP utilise-t-il une connexion ?",
+  answer: "Oui"
+},
+{
+  subject: "Réseaux",
+  question: "UDP utilise-t-il une connexion ?",
+  answer: "Non"
+},
+{
+  subject: "Réseaux",
+  question: "Étapes du handshake TCP ?",
+  answer: "SYN → SYN-ACK → ACK"
+},
+{
+  subject: "Réseaux",
+  question: "Pourquoi TCP est plus lent ?",
+  answer: "Vérification + retransmission"
+},
+{
+  subject: "Réseaux",
+  question: "Que garantit TCP ?",
+  answer: "Fiabilité, ordre, intégrité"
+},
+{
+  subject: "Réseaux",
+  question: "Que ne garantit pas UDP ?",
+  answer: "Fiabilité et ordre"
+},
+{
+  subject: "Réseaux",
+  question: "Taille en-tête UDP ?",
+  answer: "8 octets"
+},
+{
+  subject: "Réseaux",
+  question: "Taille minimale TCP ?",
+  answer: "20 octets"
+},
+
+/* 🟢 COUCHE 3 — RÉSEAU */
+
+{
+  subject: "Réseaux",
+  question: "Quel est le rôle de la couche Réseau ?",
+  answer: "Acheminer les paquets entre réseaux"
+},
+{
+  subject: "Réseaux",
+  question: "Quel protocole principal ?",
+  answer: "IP"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce qu'une adresse IP ?",
+  answer: "Identifiant unique d'une machine"
+},
+{
+  subject: "Réseaux",
+  question: "IPv4 taille ?",
+  answer: "32 bits"
+},
+{
+  subject: "Réseaux",
+  question: "IPv6 taille ?",
+  answer: "128 bits"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce que le routage ?",
+  answer: "Choisir le meilleur chemin"
+},
+{
+  subject: "Réseaux",
+  question: "Quel équipement couche 3 ?",
+  answer: "Routeur"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce qu'une IP privée ?",
+  answer: "Adresse interne"
+},
+{
+  subject: "Réseaux",
+  question: "Exemple IP privée ?",
+  answer: "192.168.x.x"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce que NAT ?",
+  answer: "Traduction IP privée/public"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce qu'un masque ?",
+  answer: "Sépare réseau/hôte"
+},
+{
+  subject: "Réseaux",
+  question: "Que signifie /24 ?",
+  answer: "24 bits réseau"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce qu'un paquet ?",
+  answer: "Unité couche 3"
+},
+{
+  subject: "Réseaux",
+  question: "Quel protocole teste réseau ?",
+  answer: "ICMP"
+},
+{
+  subject: "Réseaux",
+  question: "Ping utilise quoi ?",
+  answer: "ICMP"
+},
+
+/* 🟡 COUCHE 2 — LIAISON */
+
+{
+  subject: "Réseaux",
+  question: "Rôle couche Liaison ?",
+  answer: "Transmission locale"
+},
+{
+  subject: "Réseaux",
+  question: "Qu'est-ce qu'une MAC ?",
+  answer: "Adresse physique unique"
+},
+{
+  subject: "Réseaux",
+  question: "MAC longueur ?",
+  answer: "48 bits"
+},
+{
+  subject: "Réseaux",
+  question: "Unité couche 2 ?",
+  answer: "Trame"
+},
+{
+  subject: "Réseaux",
+  question: "Protocole principal ?",
+  answer: "Ethernet"
+},
+{
+  subject: "Réseaux",
+  question: "Quel équipement couche 2 ?",
+  answer: "Switch"
+},
+{
+  subject: "Réseaux",
+  question: "À quoi sert ARP ?",
+  answer: "Associer IP à MAC"
+},
+{
+  subject: "Réseaux",
+  question: "Différence hub/switch ?",
+  answer: "Switch intelligent"
+},
+{
+  subject: "Réseaux",
+  question: "MAC signifie ?",
+  answer: "Media Access Control"
+},
+{
+  subject: "Réseaux",
+  question: "Transmission locale ou globale ?",
+  answer: "Locale"
+},
+
+/* 🟣 COUCHE 1 — PHYSIQUE */
+
+{
+  subject: "Réseaux",
+  question: "Rôle couche Physique ?",
+  answer: "Transmettre les bits"
+},
+{
+  subject: "Réseaux",
+  question: "Unité couche 1 ?",
+  answer: "Bit"
+},
+{
+  subject: "Réseaux",
+  question: "Types de signaux ?",
+  answer: "Électrique, optique, radio"
+},
+{
+  subject: "Réseaux",
+  question: "Exemples support ?",
+  answer: "Câble, fibre"
+},
+{
+  subject: "Réseaux",
+  question: "Équipement couche 1 ?",
+  answer: "Hub"
+},
+{
+  subject: "Réseaux",
+  question: "Gère-t-elle les adresses ?",
+  answer: "Non"
+},
+{
+  subject: "Réseaux",
+  question: "Que transporte-t-elle ?",
+  answer: "0 et 1"
+},
+
+/* 🔥 BONUS / PIÈGES */
+
+{
+  subject: "Réseaux",
+  question: "Combien de couches OSI ?",
+  answer: "7"
+},
+{
+  subject: "Réseaux",
+  question: "Encapsulation ?",
+  answer: "Ajout d'en-têtes"
+},
+{
+  subject: "Réseaux",
+  question: "Décapsulation ?",
+  answer: "Retrait des en-têtes"
+},
+{
+  subject: "Réseaux",
+  question: "Couche IP ?",
+  answer: "3"
+},
+{
+  subject: "Réseaux",
+  question: "Couche MAC ?",
+  answer: "2"
+},
+{
+  subject: "Réseaux",
+  question: "Couche ports ?",
+  answer: "4"
+},
+{
+  subject: "Réseaux",
+  question: "Couche signal ?",
+  answer: "1"
+},
+{
+  subject: "Réseaux",
+  question: "TCP ou UDP pour DNS ?",
+  answer: "UDP (principalement)"
+},
+{
+  subject: "Réseaux",
+  question: "DHCP utilise ?",
+  answer: "UDP"
+},
+{
+  subject: "Réseaux",
+  question: "ICMP utilise TCP ?",
+  answer: "Non"
+}
 
   /* =========================
      🔴 CYBER / RENSEIGNEMENT
@@ -401,137 +530,6 @@ window.DEFAULT_CARDS = [
     question: "Directeur du MI5 (2020+) ?",
     answer: "Ken McCallum"
   },
-
-  /* =========================
-     📚 L'ADVERSAIRE
-  ========================= */
-
-  // 📚 INFORMATIONS GÉNÉRALES
-  {
-    subject: "L'adversaire",
-    question: "Qui est l'auteur de L'Adversaire ?",
-    answer: "Emmanuel Carrère"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Quelle est la date de parution de L'Adversaire ?",
-    answer: "2000"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Citez un autre roman d'Emmanuel Carrère",
-    answer: "La Moustache"
-  },
-
-  // 👤 PERSONNAGES
-  {
-    subject: "L'adversaire",
-    question: "Qui est Luc Ladmiral ?",
-    answer: "Le meilleur ami de Jean-Claude Romand"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Quelle est la profession de Luc Ladmiral ?",
-    answer: "Médecin généraliste à Ferney-Voltaire"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Quel est le prénom de l'épouse de Luc Ladmiral ?",
-    answer: "Cécile"
-  },
-
-  // 📖 CONTEXTE & ANALYSE
-  {
-    subject: "L'adversaire",
-    question: "Pourquoi Carrère commence-t-il par Luc Ladmiral ?",
-    answer: "Pour montrer le choc et la perte de confiance face à la révélation"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Quel homme de lettres a vécu dans la même région que Romand ?",
-    answer: "Voltaire"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Quel livre Carrère envoie-t-il à Romand en prison ?",
-    answer: "Je suis vivant et vous êtes morts"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Carrère utilise-t-il un pseudonyme pour Romand ?",
-    answer: "Non"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Combien de temps met Romand à répondre à Carrère ?",
-    answer: "2 ans"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Comment Romand appelle-t-il ses meurtres ?",
-    answer: "La tragédie"
-  },
-
-  // 🔍 ÉLÉMENTS IMPORTANTS
-  {
-    subject: "L'adversaire",
-    question: "Quel souvenir inattendu est révélé à la fin du roman ?",
-    answer: "Les lettres affectueuses d'une institutrice (Mme Hio)"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Où se trouve l'OMS ?",
-    answer: "À Genève"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Quels éléments de la nature Carrère regrette-t-il de ne pas reconnaître ?",
-    answer: "Les arbres et les oiseaux"
-  },
-
-  // 🧠 ANALYSE DU ROMAN
-  {
-    subject: "L'adversaire",
-    question: "Pourquoi L'Adversaire a-t-il un intérêt policier ?",
-    answer: "Car il raconte une enquête et un crime réel"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Pourquoi le roman a-t-il un intérêt social ?",
-    answer: "Il montre les relations humaines et la société"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Pourquoi le roman a-t-il un intérêt psychologique ?",
-    answer: "Il analyse la personnalité et les mensonges de Romand"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Pourquoi le roman a-t-il un intérêt littéraire ?",
-    answer: "C'est un récit réel écrit de manière narrative"
-  },
-
-  // ⚠️ QUESTIONS PLUS PRÉCISES
-  {
-    subject: "L'adversaire",
-    question: "Que faisait Romand avant sa tentative de suicide ?",
-    answer: "Il écoutait une cassette vidéo et utilisait la télécommande"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Avec quel objet Florence a-t-elle eu le crâne fracassé ?",
-    answer: "Un rouleau à pâtisserie"
-  },
-  {
-    subject: "L'adversaire",
-    question: "À quoi se consacre Romand en prison à la fin du livre ?",
-    answer: "À la religion (Dieu et les prières)"
-  },
-  {
-    subject: "L'adversaire",
-    question: "Pourquoi l'aveu du meurtre du beau-père est plus difficile ?",
-    answer: "Car il n'avait pas été avoué au départ et est plus personnel"
-  }
 
   /* =========================
      🧠 Physique
