@@ -1,5 +1,355 @@
 window.DEFAULT_CARDS = [
 
+ /* =========================
+     🧠 BASH - Pratique
+  ========================= */
+
+{
+  subject: "Bash - Pratique",
+  question: "S01 : Comment lire un CSV ligne par ligne et remplacer les virgules par | ?",
+  answer: "while read -r ligne; do echo \"$ligne\" | tr ',' '|'; done < fichier"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S02 : Comment lister les fichiers > 1Ko dans ~ triés par taille ?",
+  answer: "find ~ -type f -size +1k -exec ls -lh {} + | sort -k5 -hr"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S03 : Comment comparer deux fichiers avec sha256 ?",
+  answer: "sha256sum fichier1 fichier2"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S04 : Comment prendre 10 lignes aléatoires d’un fichier sans shuf ?",
+  answer: "head -n 100 fichier | sort -R | head -n 10"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S05 : Comment transformer df en CSV avec ; ?",
+  answer: "df | tr -s ' ' ';'"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S06 : Comment extraire user, UID, home depuis /etc/passwd ?",
+  answer: "cut -d':' -f1,3,6 /etc/passwd"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S07 : Comment récupérer le shell par défaut dans /etc/passwd ?",
+  answer: "cut -d':' -f7 /etc/passwd"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S08 : Comment créer des dossiers numérotés dir_001 à dir_N ?",
+  answer: "printf \"dir_%03d\" $i"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S09 : Comment lister fichiers écriture sans erreur ?",
+  answer: "find /usr/bin -writable 2>/dev/null"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S10 : Comment compter occurrences lettres ?",
+  answer: "echo \"$texte\" | tr -cd 'a-z' | fold -w1 | sort | uniq -c"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S11 : Comment générer un nombre entre 1 et 100 ?",
+  answer: "$((RANDOM % 100 + 1))"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S12 : Comment générer un nom aléatoire à 4 chiffres ?",
+  answer: "printf \"%04d\" $((RANDOM % 10000))"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S13 : Comment lister fichiers lisibles triés par taille ?",
+  answer: "find /etc -readable 2>/dev/null | xargs ls -lh | sort -k5 -hr"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S14 : Comment afficher i*j dans une double boucle ?",
+  answer: "echo $((i * j))"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S15 : Comment calculer une factorielle ?",
+  answer: "res=1; i=1; while [ $i -le $N ]; do res=$((res*i)); i=$((i+1)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S16 : Comment tester fichiers lisibles par autres ?",
+  answer: "find dossier -perm -o+r"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S17 : Comment récupérer utilisateurs connectés ?",
+  answer: "who"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S18 : Comment filtrer processus CPU > 5% ?",
+  answer: "ps aux | awk '$3 > 5'"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S19 : Comment simuler un dé (1 à 6) ?",
+  answer: "$((RANDOM % 6 + 1))"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S19 : Comment compter les sommes égales à 7 ?",
+  answer: "if [ $somme -eq 7 ]; then compteur=$((compteur+1)); fi"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S20 : Comment détecter JJ/MM/AAAA ?",
+  answer: "[[ \"$ligne\" =~ ^[0-9]{2}/[0-9]{2}/[0-9]{4}$ ]]"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S20 : Comment convertir en AAAAMMJJ ?",
+  answer: "annee=$(cut -d'/' -f3); mois=$(cut -d'/' -f2); jour=$(cut -d'/' -f1)"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S21 : Comment trier du par taille ?",
+  answer: "du dossier | sort -hr"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S23 : Comment sommer tailles fichiers ?",
+  answer: "total=$((total + taille))"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S24 : Comment trouver doublons via hash ?",
+  answer: "md5sum * | sort"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S25 : Comment compter mots contenant une lettre ?",
+  answer: "grep -i \"a\" fichier | wc -l"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S26 : Comment tester si fichier est exécutable ?",
+  answer: "[ -x \"$fichier\" ]"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S27 : Comment récupérer extension fichier ?",
+  answer: "extension=${fichier##*.}"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S29 : Comment chercher dans un log ?",
+  answer: "grep \"mot\" fichier.log"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S30 : Comment lancer et trier lspci ?",
+  answer: "lspci | sort"
+},
+   
+/* =========================
+     🔵 BASH - ARGUMENTS & TESTS
+  ========================= */
+
+  {
+    subject: "Bash",
+    question: "Comment vérifier qu'un argument est fourni ?",
+    answer: "[ -z \"$1\" ]"
+  },
+  {
+    subject: "Bash",
+    question: "Comment vérifier qu'un fichier existe ?",
+    answer: "[ -f \"$1\" ]"
+  },
+  {
+    subject: "Bash",
+    question: "Comment vérifier qu'un dossier existe ?",
+    answer: "[ -d \"$1\" ]"
+  },
+  {
+    subject: "Bash",
+    question: "Condition complète pour vérifier argument valide fichier ?",
+    answer: "[ -z \"$1\" ] || [ ! -f \"$1\" ]"
+  },
+  {
+    subject: "Bash",
+    question: "Comment afficher un message d'erreur et quitter ?",
+    answer: "echo \"Erreur\" ; exit 1"
+  },
+
+  /* =========================
+     🔢 BASH - CALCULS
+  ========================= */
+
+  {
+    subject: "Bash",
+    question: "Syntaxe pour faire un calcul en Bash ?",
+    answer: "$((expression))"
+  },
+  {
+    subject: "Bash",
+    question: "Comment incrémenter i ?",
+    answer: "i=$((i + 1))"
+  },
+  {
+    subject: "Bash",
+    question: "Comment initialiser un compteur ?",
+    answer: "compteur=0"
+  },
+  {
+    subject: "Bash",
+    question: "Comment générer un nombre aléatoire entre 1 et 6 ?",
+    answer: "$((RANDOM % 6 + 1))"
+  },
+  {
+    subject: "Bash",
+    question: "Comment comparer deux nombres ?",
+    answer: "[ \"$a\" -eq \"$b\" ]"
+  },
+
+  /* =========================
+     🔁 BASH - BOUCLES
+  ========================= */
+
+  {
+    subject: "Bash",
+    question: "Structure d'une boucle while ?",
+    answer: "while [ condition ]; do ... done"
+  },
+  {
+    subject: "Bash",
+    question: "Boucle pour compter de 1 à N ?",
+    answer: "i=1; while [ $i -le $N ]; do ...; i=$((i+1)); done"
+  },
+  {
+    subject: "Bash",
+    question: "Comment lire une ligne dans un fichier ?",
+    answer: "read -r ligne"
+  },
+  {
+    subject: "Bash",
+    question: "Pourquoi utiliser read -r ?",
+    answer: "Pour éviter l'interprétation des caractères spéciaux"
+  },
+
+  /* =========================
+     📄 BASH - FICHIERS
+  ========================= */
+
+  {
+    subject: "Bash",
+    question: "Comment vider un fichier ?",
+    answer: "> fichier.txt"
+  },
+  {
+    subject: "Bash",
+    question: "Comment écrire dans un fichier ?",
+    answer: "echo \"texte\" > fichier.txt"
+  },
+  {
+    subject: "Bash",
+    question: "Comment ajouter dans un fichier ?",
+    answer: "echo \"texte\" >> fichier.txt"
+  },
+  {
+    subject: "Bash",
+    question: "Comment lire un fichier sans utiliser < ?",
+    answer: "exec 3< fichier ; read ligne <&3"
+  },
+
+  /* =========================
+     🔍 BASH - CONDITIONS & REGEX
+  ========================= */
+
+  {
+    subject: "Bash",
+    question: "Syntaxe d'un if en Bash ?",
+    answer: "if [ condition ]; then ... fi"
+  },
+  {
+    subject: "Bash",
+    question: "Comment tester une regex en Bash ?",
+    answer: "[[ \"$var\" =~ regex ]]"
+  },
+  {
+    subject: "Bash",
+    question: "Regex pour JJ/MM/AAAA ?",
+    answer: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$"
+  },
+  {
+    subject: "Bash",
+    question: "Comment extraire jour/mois/année avec cut ?",
+    answer: "cut -d'/' -f1 -f2 -f3"
+  },
+
+  /* =========================
+     ⚠️ BASH - PIÈGES EXAM
+  ========================= */
+
+  {
+    subject: "Bash",
+    question: "Corrige : [ -z $1 ]",
+    answer: "[ -z \"$1\" ]"
+  },
+  {
+    subject: "Bash",
+    question: "Corrige : [ -f $1 ]",
+    answer: "[ -f \"$1\" ]"
+  },
+  {
+    subject: "Bash",
+    question: "Pourquoi éviter cat fichier | while read ?",
+    answer: "Car la boucle s'exécute dans un subshell"
+  },
+  {
+    subject: "Bash",
+    question: "Comment faire un OU logique en Bash ?",
+    answer: "[ condition1 ] || [ condition2 ]"
+  },
+  {
+    subject: "Bash",
+    question: "Comment faire un ET logique en Bash ?",
+    answer: "[ condition1 ] && [ condition2 ]"
+  },
+
+  /* =========================
+     🎯 BASH - CAS TP CONCRETS
+  ========================= */
+
+  {
+    subject: "Bash",
+    question: "Comment compter le nombre de lignes traitées ?",
+    answer: "compteur=$((compteur + 1))"
+  },
+  {
+    subject: "Bash",
+    question: "Comment comparer si une valeur est >= N ?",
+    answer: "[ \"$val\" -ge \"$N\" ]"
+  },
+  {
+    subject: "Bash",
+    question: "Comment afficher uniquement certaines colonnes ?",
+    answer: "cut -d':' -f1"
+  },
+  {
+  subject: "Bash",
+  question: "Comment lire un fichier ligne par ligne ?",
+  answer: "while read -r ligne; do ... done"
+  },
+  {
+    subject: "Bash",
+    question: "Comment créer un fichier s'il n'existe pas ?",
+    answer: "touch fichier.txt"
+  },
+   
 /* =========================
    🌐 OSI — COUCHES 1 À 4
 ========================= */
