@@ -533,4 +533,128 @@ window.DEFAULT_CARDS = [
     answer: "Car il n'avait pas été avoué au départ et est plus personnel"
   }
 
+ /* =========================
+     🧠 Physique
+  ========================= */
+[
+  {
+    subject: "Physique",
+    question: "Quelle est la formule du pont diviseur de tension ?",
+    answer: "U_AB = (R2 + R3) / (R1 + R2 + R3) × E"
+  },
+  {
+    subject: "Physique",
+    question: "À quoi sert un pont diviseur de tension ?",
+    answer: "À adapter une tension (ex : passer de 24V à 5V)"
+  },
+  {
+    subject: "Physique",
+    question: "Quelle est la loi des mailles ?",
+    answer: "La somme des tensions dans une maille est nulle"
+  },
+  {
+    subject: "Physique",
+    question: "Expression de la loi des mailles avec un générateur ?",
+    answer: "E = U1 + U2"
+  },
+  {
+    subject: "Physique",
+    question: "Quelle est la loi des nœuds ?",
+    answer: "La somme des courants entrants = somme des courants sortants"
+  },
+  {
+    subject: "Physique",
+    question: "Formule de la loi d’Ohm ?",
+    answer: "U = R × I"
+  },
+  {
+    subject: "Physique",
+    question: "Comment calculer un courant dans une branche ?",
+    answer: "I = U / R"
+  },
+  {
+    subject: "Physique",
+    question: "Formule de la célérité du son ?",
+    answer: "v = distance / temps"
+  },
+  {
+    subject: "Physique",
+    question: "Relation entre vitesse, longueur d’onde et fréquence ?",
+    answer: "v = λ × f"
+  },
+  {
+    subject: "Physique",
+    question: "Formule de la fréquence ?",
+    answer: "f = 1 / T"
+  },
+  {
+    subject: "Physique",
+    question: "Domaine des sons audibles ?",
+    answer: "Entre 20 Hz et 20 kHz"
+  },
+  {
+    subject: "Physique",
+    question: "Formule de la longueur d’onde ?",
+    answer: "λ = v / f"
+  },
+  {
+    subject: "Physique",
+    question: "Formule de la vitesse de propagation dans un câble ?",
+    answer: "v = L / Δt"
+  },
+  {
+    subject: "Physique",
+    question: "Formule de l’atténuation en dB ?",
+    answer: "A_dB = 20 log(Ve / Vs)"
+  },
+  {
+    subject: "Physique",
+    question: "Pourquoi adapter une ligne de transmission ?",
+    answer: "Pour éviter les réflexions du signal"
+  },
+  {
+    subject: "Physique",
+    question: "Quand y a-t-il réflexion du signal ?",
+    answer: "Quand l’impédance n’est pas adaptée"
+  },
+  {
+    subject: "Physique",
+    question: "Formule du coefficient de vélocité ?",
+    answer: "k = v / c"
+  },
+  {
+    subject: "Physique",
+    question: "Formule de la bande passante ?",
+    answer: "B = f_c2 - f_c1"
+  },
+  {
+    subject: "Physique",
+    question: "Formule du facteur de qualité ?",
+    answer: "Q = f0 / B"
+  },
+  {
+    subject: "Physique",
+    question: "Comment trouver la fréquence centrale (échelle log) ?",
+    answer: "f0 = √(f_c1 × f_c2)"
+  },
+  {
+    subject: "Physique",
+    question: "Que signifie -3 dB ?",
+    answer: "La puissance est divisée par 2 (zone utile du filtre)"
+  },
+  {
+    subject: "Physique",
+    question: "Impédance d’un circuit LC en parallèle (forme générale) ?",
+    answer: "Zp dépend de L, C et ω (comportement fréquentiel)"
+  },
+  {
+    subject: "Physique",
+    question: "Pourquoi ajouter une résistance en parallèle d’un LC ?",
+    answer: "Pour adapter l’impédance à la ligne"
+  },
+  {
+    subject: "Physique",
+    question: "Pourquoi utiliser un circuit LC ?",
+    answer: "Pour filtrer les parasites (HF ou DC)"
+  }
 ];
