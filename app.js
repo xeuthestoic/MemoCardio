@@ -51,6 +51,8 @@ function login() {
           initData();
           showPage("dashboard");
           loadSubjects();
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
          })
         .catch((error) => {
             alert(error.message);
