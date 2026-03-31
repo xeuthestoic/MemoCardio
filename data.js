@@ -327,7 +327,7 @@ window.DEFAULT_CARDS = [
   subject: "Réseaux",
   question: "ICMP utilise TCP ?",
   answer: "Non"
-}
+},
 
   /* =========================
      🔴 CYBER / RENSEIGNEMENT
