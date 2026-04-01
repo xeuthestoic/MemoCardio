@@ -9,14 +9,18 @@ let currentIndex = 0;
    DATA
 ========================= */
 function initData() {
-    const data = window.DEFAULT_CARDS;
-    if (!data) {
-        console.error("DEFAULT_CARDS manquant !");
-        return;
+    const existing = localStorage.getItem("cards");
+
+    if (!existing) {
+        const data = window.DEFAULT_CARDS;
+
+        if (!data) {
+            console.error("DEFAULT_CARDS manquant !");
+            return;
+        }
+
+        localStorage.setItem("cards", JSON.stringify(data));
     }
-   if (!localStorage.getItem("cards")) {
-    localStorage.setItem("cards", JSON.stringify(data));
-   }
 }
 
 function getCards() {
