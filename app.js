@@ -105,10 +105,6 @@ function openFolder(folder) {
     });
 }
 
-document.getElementById("backBtn").onclick = () => {
-    loadFolders();
-};
-
 /* =========================
    CARDS
 ========================= */
@@ -160,9 +156,13 @@ function goBack() {
 window.addEventListener("DOMContentLoaded", () => {
     initData();
     showPage("login");
+
     document.getElementById("loginBtn").addEventListener("click", login);
 
-    // 🔥 ENTER pour login
+    document.getElementById("backBtn").onclick = () => {
+        loadFolders();
+    };
+
     document.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && document.getElementById("login").style.display !== "none") {
             login();
