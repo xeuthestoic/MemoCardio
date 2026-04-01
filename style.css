@@ -186,3 +186,17 @@ input {
     font-size: 18px;
   }
 }
+
+#backBtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(20,20,30,0.9);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(124,58,237,0.6);
+}
