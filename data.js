@@ -6,102 +6,132 @@ window.DEFAULT_CARDS = [
 
 {
   subject: "Bash - Pratique",
-  question: "S01 : Comment lire un CSV ligne par ligne et remplacer les virgules par | ?",
-  answer: "while read -r ligne; do echo \"$ligne\" | tr ',' '|'; done < fichier"
+  question: "S01 : Comment lire un CSV ligne par ligne ?",
+  answer: "while read -r ligne; do ... done < fichier"
 },
 {
   subject: "Bash - Pratique",
-  question: "S02 : Comment lister les fichiers > 1Ko dans ~ triés par taille ?",
-  answer: "find ~ -type f -size +1k -exec ls -lh {} + | sort -k5 -hr"
+  question: "S01 : Comment remplacer , par | ?",
+  answer: "echo \"$ligne\" | tr ',' '|'"
 },
 {
   subject: "Bash - Pratique",
-  question: "S03 : Comment comparer deux fichiers avec sha256 ?",
-  answer: "sha256sum fichier1 fichier2"
+  question: "S02 : Comment parcourir les fichiers d’un dossier ?",
+  answer: "for f in ~/*; do ... done"
 },
 {
   subject: "Bash - Pratique",
-  question: "S04 : Comment prendre 10 lignes aléatoires d’un fichier sans shuf ?",
-  answer: "head -n 100 fichier | sort -R | head -n 10"
+  question: "S02 : Comment vérifier taille > 1Ko ?",
+  answer: "[ $(stat -c%s \"$f\") -gt 1024 ]"
 },
 {
   subject: "Bash - Pratique",
-  question: "S05 : Comment transformer df en CSV avec ; ?",
-  answer: "df | tr -s ' ' ';'"
+  question: "S03 : Comment générer un hash ?",
+  answer: "sha256sum fichier"
 },
 {
   subject: "Bash - Pratique",
-  question: "S06 : Comment extraire user, UID, home depuis /etc/passwd ?",
+  question: "S03 : Comment comparer deux fichiers ?",
+  answer: "h1=$(sha256sum f1); h2=$(sha256sum f2); [ \"$h1\" = \"$h2\" ]"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S04 : Comment lire N lignes d’un fichier ?",
+  answer: "i=0; while read -r ligne && [ $i -lt N ]; do ...; i=$((i+1)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S05 : Comment remplacer espaces multiples ?",
+  answer: "echo \"$ligne\" | tr -s ' ' ';'"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S06 : Comment extraire user UID home ?",
   answer: "cut -d':' -f1,3,6 /etc/passwd"
 },
 {
   subject: "Bash - Pratique",
-  question: "S07 : Comment récupérer le shell par défaut dans /etc/passwd ?",
-  answer: "cut -d':' -f7 /etc/passwd"
+  question: "S07 : Comment lire un champ précis ?",
+  answer: "cut -d':' -f7"
 },
 {
   subject: "Bash - Pratique",
-  question: "S08 : Comment créer des dossiers numérotés dir_001 à dir_N ?",
-  answer: "printf \"dir_%03d\" $i"
+  question: "S08 : Comment créer N dossiers ?",
+  answer: "i=1; while [ $i -le N ]; do mkdir \"dir_$i\"; i=$((i+1)); done"
 },
 {
   subject: "Bash - Pratique",
-  question: "S09 : Comment lister fichiers écriture sans erreur ?",
-  answer: "find /usr/bin -writable 2>/dev/null"
+  question: "S08 : Comment créer des fichiers vides ?",
+  answer: "touch fichier_A"
 },
 {
   subject: "Bash - Pratique",
-  question: "S10 : Comment compter occurrences lettres ?",
-  answer: "echo \"$texte\" | tr -cd 'a-z' | fold -w1 | sort | uniq -c"
+  question: "S09 : Comment ignorer erreurs ?",
+  answer: "commande 2>/dev/null"
 },
 {
   subject: "Bash - Pratique",
-  question: "S11 : Comment générer un nombre entre 1 et 100 ?",
-  answer: "$((RANDOM % 100 + 1))"
+  question: "S10 : Comment parcourir caractères d’un mot ?",
+  answer: "i=0; while [ $i -lt ${#mot} ]; do lettre=${mot:$i:1}; i=$((i+1)); done"
 },
 {
   subject: "Bash - Pratique",
-  question: "S12 : Comment générer un nom aléatoire à 4 chiffres ?",
-  answer: "printf \"%04d\" $((RANDOM % 10000))"
+  question: "S11 : Comment lire une entrée utilisateur ?",
+  answer: "read reponse"
 },
 {
   subject: "Bash - Pratique",
-  question: "S13 : Comment lister fichiers lisibles triés par taille ?",
-  answer: "find /etc -readable 2>/dev/null | xargs ls -lh | sort -k5 -hr"
+  question: "S11 : Comment comparer deux nombres ?",
+  answer: "[ \"$rep\" -eq \"$secret\" ]"
 },
 {
   subject: "Bash - Pratique",
-  question: "S14 : Comment afficher i*j dans une double boucle ?",
-  answer: "echo $((i * j))"
+  question: "S12 : Comment éviter doublons fichiers ?",
+  answer: "[ -f \"$nom\" ]"
 },
 {
   subject: "Bash - Pratique",
-  question: "S15 : Comment calculer une factorielle ?",
-  answer: "res=1; i=1; while [ $i -le $N ]; do res=$((res*i)); i=$((i+1)); done"
+  question: "S13 : Comment tester lecture fichier ?",
+  answer: "[ -r \"$fichier\" ]"
 },
 {
   subject: "Bash - Pratique",
-  question: "S16 : Comment tester fichiers lisibles par autres ?",
-  answer: "find dossier -perm -o+r"
+  question: "S14 : Comment faire une double boucle ?",
+  answer: "i=1; while [ $i -le N ]; do j=1; while [ $j -le N ]; do ...; j=$((j+1)); done; i=$((i+1)); done"
 },
 {
   subject: "Bash - Pratique",
-  question: "S17 : Comment récupérer utilisateurs connectés ?",
-  answer: "who"
+  question: "S14 : Comment calculer i*j ?",
+  answer: "$((i * j))"
 },
 {
   subject: "Bash - Pratique",
-  question: "S18 : Comment filtrer processus CPU > 5% ?",
-  answer: "ps aux | awk '$3 > 5'"
+  question: "S15 : Comment faire une factorielle ?",
+  answer: "res=1; i=1; while [ $i -le N ]; do res=$((res*i)); i=$((i+1)); done"
 },
 {
   subject: "Bash - Pratique",
-  question: "S19 : Comment simuler un dé (1 à 6) ?",
+  question: "S16 : Comment tester droits lecture ?",
+  answer: "[ -r \"$fichier\" ]"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S17 : Comment lire sortie commande ligne par ligne ?",
+  answer: "commande | while read -r ligne; do ... done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S18 : Comment filtrer avec condition ?",
+  answer: "if [ \"$val\" -gt 5 ]; then ..."
+},
+{
+  subject: "Bash - Pratique",
+  question: "S19 : Comment simuler un dé ?",
   answer: "$((RANDOM % 6 + 1))"
 },
 {
   subject: "Bash - Pratique",
-  question: "S19 : Comment compter les sommes égales à 7 ?",
+  question: "S19 : Comment compter les 7 ?",
   answer: "if [ $somme -eq 7 ]; then compteur=$((compteur+1)); fi"
 },
 {
@@ -116,43 +146,43 @@ window.DEFAULT_CARDS = [
 },
 {
   subject: "Bash - Pratique",
-  question: "S21 : Comment trier du par taille ?",
-  answer: "du dossier | sort -hr"
-},
-{
-  subject: "Bash - Pratique",
-  question: "S23 : Comment sommer tailles fichiers ?",
+  question: "S21 : Comment accumuler une taille ?",
   answer: "total=$((total + taille))"
 },
 {
   subject: "Bash - Pratique",
-  question: "S24 : Comment trouver doublons via hash ?",
-  answer: "md5sum * | sort"
+  question: "S23 : Comment parcourir fichiers ?",
+  answer: "for f in dossier/*; do ... done"
 },
 {
   subject: "Bash - Pratique",
-  question: "S25 : Comment compter mots contenant une lettre ?",
-  answer: "grep -i \"a\" fichier | wc -l"
+  question: "S24 : Comment détecter doublons ?",
+  answer: "h=$(sha256sum \"$fichier\")"
 },
 {
   subject: "Bash - Pratique",
-  question: "S26 : Comment tester si fichier est exécutable ?",
+  question: "S25 : Comment tester présence lettre ?",
+  answer: "echo \"$mot\" | grep \"a\""
+},
+{
+  subject: "Bash - Pratique",
+  question: "S26 : Comment tester exécutable ?",
   answer: "[ -x \"$fichier\" ]"
 },
 {
   subject: "Bash - Pratique",
-  question: "S27 : Comment récupérer extension fichier ?",
-  answer: "extension=${fichier##*.}"
+  question: "S27 : Comment créer un dossier ?",
+  answer: "mkdir nom"
 },
 {
   subject: "Bash - Pratique",
   question: "S29 : Comment chercher dans un log ?",
-  answer: "grep \"mot\" fichier.log"
+  answer: "grep \"texte\" fichier.log"
 },
 {
   subject: "Bash - Pratique",
-  question: "S30 : Comment lancer et trier lspci ?",
-  answer: "lspci | sort"
+  question: "S30 : Comment exécuter une commande ?",
+  answer: "commande"
 },
    
 /* =========================
