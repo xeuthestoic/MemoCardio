@@ -14,7 +14,9 @@ function initData() {
         console.error("DEFAULT_CARDS manquant !");
         return;
     }
+   if (!localStorage.getItem("cards")) {
     localStorage.setItem("cards", JSON.stringify(data));
+   }
 }
 
 function getCards() {
