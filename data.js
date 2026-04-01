@@ -1,4 +1,4 @@
-cwindow.DEFAULT_CARDS = [
+window.DEFAULT_CARDS = [
 
   /* =========================
      🔵 Bxd..ti
