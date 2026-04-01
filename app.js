@@ -66,12 +66,16 @@ function login() {
    DASHBOARD
 ========================= */
 function loadFolders() {
-    const data = getCards();
+    currentFolder = null;
 
+    const data = getCards();
     const folders = [...new Set(data.map(c => c.folder))];
 
     const container = document.getElementById("subjects");
+    const backBtn = document.getElementById("backBtn");
+
     container.innerHTML = "";
+    backBtn.style.display = "none";
 
     folders.forEach(folder => {
         const div = document.createElement("div");
@@ -82,12 +86,16 @@ function loadFolders() {
 }
 
 function openFolder(folder) {
-    const data = getCards().filter(c => c.folder === folder);
+    currentFolder = folder;
 
+    const data = getCards().filter(c => c.folder === folder);
     const subjects = [...new Set(data.map(c => c.subject))];
 
     const container = document.getElementById("subjects");
+    const backBtn = document.getElementById("backBtn");
+
     container.innerHTML = "";
+    backBtn.style.display = "block";
 
     subjects.forEach(sub => {
         const div = document.createElement("div");
@@ -96,6 +104,10 @@ function openFolder(folder) {
         container.appendChild(div);
     });
 }
+
+document.getElementById("backBtn").onclick = () => {
+    loadFolders();
+};
 
 /* =========================
    CARDS
