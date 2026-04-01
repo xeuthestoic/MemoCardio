@@ -33,7 +33,7 @@ window.DEFAULT_CARDS = [
   folder: "Systèmes",
   subject: "Adressage IP",
   question: "Plages des IP privées ?",
-  answer: "10.0.0.0/8 | 172.16.0.0/12 | 192.168.0.0/16"
+  answer: "10.0.0.0/8 -> 10.255.255.255 | 172.16.0.0/12 -> 172.31.255.255 | 192.168.0.0/16 -> 192.168.255.255"
 },
 {
   folder: "Systèmes",
@@ -45,7 +45,7 @@ window.DEFAULT_CARDS = [
   folder: "Systèmes",
   subject: "Adressage IP",
   question: "Plage APIPA ?",
-  answer: "169.254.0.0/16"
+  answer: "169.254.0.0/16 -> 169.254.255.255"
 },
 {
   folder: "Systèmes",
@@ -63,7 +63,13 @@ window.DEFAULT_CARDS = [
   folder: "Systèmes",
   subject: "Adressage IP",
   question: "Plage multicast ?",
-  answer: "224.0.0.0/4"
+  answer: "224.0.0.0/4 -> 239.255.255.255"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Plage Carrier Grade Nat (CGN) ?",
+  answer: "100.64.0.0/10 -> 100.127.255.255"
 },
 {
   folder: "Systèmes",
@@ -74,20 +80,14 @@ window.DEFAULT_CARDS = [
 {
   folder: "Systèmes",
   subject: "Adressage IP",
-  question: "Adresse broadcast générale ?",
-  answer: "255.255.255.255"
-},
-{
-  folder: "Systèmes",
-  subject: "Adressage IP",
-  question: "Qu'est-ce que le loopback ?",
+  question: "Qu'est-ce que la boucle locale ?",
   answer: "Adresse utilisée pour tester sa propre machine"
 },
 {
   folder: "Systèmes",
   subject: "Adressage IP",
   question: "Adresse loopback ?",
-  answer: "127.0.0.0/8 (ex: 127.0.0.1)"
+  answer: "127.0.0.0/8 -> 127.255.255.255"
 },
 {
   folder: "Systèmes",
@@ -98,8 +98,8 @@ window.DEFAULT_CARDS = [
 {
   folder: "Systèmes",
   subject: "Adressage IP",
-  question: "Exemple d'IP réservée documentation ?",
-  answer: "192.0.2.0/24"
+  question: "Plage des @IPs pour un Usage Futur ?",
+  answer: "240.0.0.0/4 -> 255.255.255.255"
 },
 {
   folder: "Systèmes",
@@ -957,12 +957,6 @@ window.DEFAULT_CARDS = [
 {
   folder: "Réseaux",
   subject: "OSI",
-  question: "Protocole principal ?",
-  answer: "Ethernet"
-},
-{
-  folder: "Réseaux",
-  subject: "OSI",
   question: "Quel équipement couche 2 ?",
   answer: "Switch"
 },
@@ -971,12 +965,6 @@ window.DEFAULT_CARDS = [
   subject: "OSI",
   question: "À quoi sert ARP ?",
   answer: "Associer IP à MAC"
-},
-{
-  folder: "Réseaux",
-  subject: "OSI",
-  question: "Différence hub/switch ?",
-  answer: "Switch intelligent"
 },
 {
   folder: "Réseaux",
@@ -1004,18 +992,6 @@ window.DEFAULT_CARDS = [
   subject: "OSI",
   question: "Unité couche 1 ?",
   answer: "Bit"
-},
-{
-  folder: "Réseaux",
-  subject: "OSI",
-  question: "Types de signaux ?",
-  answer: "Électrique, optique, radio"
-},
-{
-  folder: "Réseaux",
-  subject: "OSI",
-  question: "Exemples support ?",
-  answer: "Câble, fibre"
 },
 {
   folder: "Réseaux",
@@ -1097,6 +1073,69 @@ window.DEFAULT_CARDS = [
   subject: "OSI",
   question: "ICMP utilise TCP ?",
   answer: "Non"
+},
+
+ /* 🟡 Réseaux — Routage */
+ 
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "Que contient une table de routage ?",
+  answer: "Destination | Masque | Passerelle | Interface | Métrique"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "Comment lire une route 192.168.1.0/24 ?",
+  answer: "Réseau destination avec masque /24"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "Que signifie 0.0.0.0/0 ?",
+  answer: "Route par défaut"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "Que signifie la métrique ?",
+  answer: "Coût d'une route (plus petit = meilleur)"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "Que fait un routeur ?",
+  answer: "Choisit le meilleur chemin selon la table"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "À quoi sert RIP ?",
+  answer: "Routage simple basé sur le nombre de sauts"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "Limite de RIP ?",
+  answer: "15 sauts maximum"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "À quoi sert OSPF ?",
+  answer: "Routage rapide basé sur le coût (état des liens)"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "À quoi sert BGP ?",
+  answer: "Routage entre réseaux (Internet)"
+},
+{
+  folder: "Réseaux",
+  subject: "Routage",
+  question: "Différence RIP / OSPF ?",
+  answer: "RIP = distance | OSPF = état des liens"
 },
 
   /* =========================
@@ -1374,16 +1413,10 @@ window.DEFAULT_CARDS = [
     answer: "La somme des courants entrants = somme des courants sortants"
   },
   {
-   folder: "Physique",
-    subject: "Electricité",
-    question: "Formule de la loi d’Ohm ?",
-    answer: "U = R × I"
-  },
-  {
-   folder: "Physique",
-    subject: "Electricité",
-    question: "Comment calculer un courant dans une branche ?",
-    answer: "I = U / R"
+  folder: "Physique",
+  subject: "Electricité",
+  question: "Loi d’Ohm (formule + unités) ?",
+  answer: "U = R × I | U(V), R(Ω), I(A)"
   },
   {
    folder: "Physique",
@@ -1448,20 +1481,8 @@ window.DEFAULT_CARDS = [
   {
    folder: "Physique",
     subject: "Ondes",
-    question: "Formule de la bande passante ?",
-    answer: "B = f_c2 - f_c1"
-  },
-  {
-   folder: "Physique",
-    subject: "Ondes",
     question: "Formule du facteur de qualité ?",
     answer: "Q = f0 / B"
-  },
-  {
-   folder: "Physique",
-    subject: "Ondes",
-    question: "Comment trouver la fréquence centrale (échelle log) ?",
-    answer: "f0 = √(f_c1 × f_c2)"
   },
   {
    folder: "Physique",
@@ -1486,6 +1507,18 @@ window.DEFAULT_CARDS = [
     subject: "Ondes",
     question: "Pourquoi utiliser un circuit LC ?",
     answer: "Pour filtrer les parasites (HF ou DC)"
-  }
+  },
+  {
+  folder: "Physique",
+  subject: "Electricité",
+  question: "Puissance électrique ?",
+  answer: "P = U × I (W)"
+ },
+ {
+  folder: "Physique",
+  subject: "Ondes",
+  question: "Bande passante ?",
+  answer: "B = f2 - f1"
+ }
 
 ];
