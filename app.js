@@ -1,6 +1,7 @@
 import { auth } from "./firebase.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+let currentFolder = null;
 let cards = [];
 let currentIndex = 0;
 
