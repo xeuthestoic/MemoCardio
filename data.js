@@ -1,6 +1,124 @@
-window.DEFAULT_CARDS = [
+cwindow.DEFAULT_CARDS = [
 
+  /* =========================
+     🔵 Bxd..ti
+  ========================= */
 
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "À quoi sert un VLAN ?",
+    answer: "Segmenter un réseau pour isoler les communications et améliorer la sécurité"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Pourquoi utiliser des VLANs ?",
+    answer: "Organiser le réseau, limiter les broadcasts et renforcer la sécurité"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Qu'est-ce qu'une architecture réseau ?",
+    answer: "Organisation logique et physique des équipements et communications"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Pourquoi revoir une architecture réseau ?",
+    answer: "Pour améliorer les performances, la sécurité ou la scalabilité"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Qu'est-ce que le modèle OSI ?",
+    answer: "Un modèle en 7 couches décrivant le fonctionnement des communications réseau"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Combien de couches dans le modèle OSI ?",
+    answer: "7 couches"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Couche 1 OSI ?",
+    answer: "Physique : transmission des bits"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Couche 2 OSI ?",
+    answer: "Liaison : trames, adresses MAC"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Couche 3 OSI ?",
+    answer: "Réseau : adressage IP et routage"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Couche 4 OSI ?",
+    answer: "Transport : ports, TCP/UDP"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Donne un protocole couche 2",
+    answer: "Ethernet, ARP"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Donne un protocole couche 3",
+    answer: "IP, ICMP"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Donne un protocole couche 4",
+    answer: "TCP ou UDP"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Qu'est-ce qu'une adresse IPv4 ?",
+    answer: "Identifiant unique d'un appareil sur un réseau (32 bits)"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Format d'une IPv4 ?",
+    answer: "4 octets séparés par des points (ex: 192.168.1.1)"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Rôle d’un firewall ?",
+    answer: "Filtrer le trafic réseau selon des règles de sécurité"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Firewall agit sur quelles couches ?",
+    answer: "Principalement couches 3 et 4"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Qu'est-ce que le routage ?",
+    answer: "Fais des tables de routage"
+  },
+  {
+    folder: "Réseaux",
+    subject: "Bxd..ti",
+    question: "Rôle d’un routeur ?",
+    answer: "Diriger les paquets vers leur destination"
+  },
+ 
  /* =========================
      🛜 Systèmes - Adressage IP
   ========================= */
