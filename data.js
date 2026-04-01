@@ -184,6 +184,151 @@ window.DEFAULT_CARDS = [
   question: "S30 : Comment exécuter une commande ?",
   answer: "commande"
 },
+{
+  subject: "Bash - Pratique",
+  question: "S01 : CSV → Markdown",
+  answer: "while read -r ligne; do echo \"| $(echo \"$ligne\" | tr ',' ' | ') |\"; done < fichier"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S02 : fichiers >1Ko",
+  answer: "for f in ~/*; do if [ -f \"$f\" ] && [ $(stat -c%s \"$f\") -gt 1024 ]; then echo \"$f\"; fi; done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S03 : copie + vérif hash",
+  answer: "cp \"$f\" \"$dest\"; h1=$(sha256sum \"$f\"); h2=$(sha256sum \"$dest\"); [ \"$h1\" = \"$h2\" ]"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S04 : lire 10 lignes + compter lettres",
+  answer: "i=0; total=0; while read -r l && [ $i -lt 10 ]; do echo \"$l\"; total=$((total + ${#l})); i=$((i+1)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S05 : df → CSV",
+  answer: "df | while read -r l; do echo \"$l\" | tr -s ' ' ';'; done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S06 : /etc/passwd → CSV",
+  answer: "while read -r l; do echo \"$l\" | cut -d':' -f1,3,6; done < /etc/passwd"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S07 : classer par shell",
+  answer: "while read -r l; do shell=$(echo \"$l\" | cut -d':' -f7); echo \"$shell\"; done < /etc/passwd"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S08 : créer N dossiers + fichiers",
+  answer: "i=1; while [ $i -le N ]; do mkdir \"dir_$i\"; touch \"dir_$i/fichier_A\"; i=$((i+1)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S09 : fichiers writable",
+  answer: "for f in /usr/bin/*; do [ -w \"$f\" ] && echo \"$f\"; done 2>/dev/null"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S10 : phrase 5 mots + compter lettres",
+  answer: "phrase=\"\"; i=0; while [ $i -lt 5 ]; do read mot; phrase=\"$phrase $mot\"; i=$((i+1)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S11 : jeu devinette",
+  answer: "secret=$((RANDOM%100+1)); while true; do read rep; if [ $rep -lt $secret ]; then echo plus; elif [ $rep -gt $secret ]; then echo moins; else break; fi; done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S12 : créer fichiers aléatoires",
+  answer: "i=0; while [ $i -lt N ]; do nom=$((RANDOM%10000)); touch \"$nom\"; i=$((i+1)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S13 : fichiers lisibles",
+  answer: "for f in /etc/*; do [ -r \"$f\" ] && echo \"$f\"; done 2>/dev/null"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S14 : tableau multiplication",
+  answer: "i=1; while [ $i -le N ]; do j=1; while [ $j -le N ]; do echo -n \"$((i*j)) \"; j=$((j+1)); done; echo; i=$((i+1)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S15 : factorielle",
+  answer: "res=1; i=1; while [ $i -le N ]; do res=$((res*i)); i=$((i+1)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S16 : fichiers lisibles par autres",
+  answer: "for f in dossier/*; do [ -r \"$f\" ] && echo \"$f\"; done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S17 : who parsing",
+  answer: "who | while read -r u t h; do echo \"$u;$t;$h\"; done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S18 : filtrer ps",
+  answer: "ps aux | while read -r l; do cpu=$(echo \"$l\" | cut -d' ' -f3); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S19 : dés",
+  answer: "de1=$((RANDOM%6+1)); de2=$((RANDOM%6+1)); somme=$((de1+de2))"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S20 : dates",
+  answer: "if [[ \"$l\" =~ ^[0-9]{2}/[0-9]{2}/[0-9]{4}$ ]]; then j=$(cut -d'/' -f1); m=$(cut -d'/' -f2); a=$(cut -d'/' -f3); fi"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S21 : du logique",
+  answer: "for d in dossier/*; do taille=$(du \"$d\"); echo \"$taille\"; done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S23 : somme tailles",
+  answer: "total=0; for f in dossier/*; do taille=$(stat -c%s \"$f\"); total=$((total+taille)); done"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S24 : doublons hash",
+  answer: "h=$(sha256sum \"$f\"); comparer avec autres"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S25 : compter lettres",
+  answer: "echo \"$mot\" | grep \"a\""
+},
+{
+  subject: "Bash - Pratique",
+  question: "S26 : exécutable",
+  answer: "[ -x \"$f\" ]"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S27 : extension",
+  answer: "nom=$(basename \"$f\"); ext=${nom#*.}"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S28 : markdown parsing",
+  answer: "grep '|' fichier"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S29 : log analyse",
+  answer: "grep \"install\" fichier.log"
+},
+{
+  subject: "Bash - Pratique",
+  question: "S30 : lspci",
+  answer: "lspci"
+},
    
 /* =========================
      🔵 BASH - ARGUMENTS & TESTS
