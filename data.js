@@ -6,393 +6,353 @@ window.DEFAULT_CARDS = [
 
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S01 : Comment lire un CSV ligne par ligne ?",
-  answer: "while read -r ligne; do ... done < fichier"
-},
-{
-  folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S01 : Comment remplacer , par | ?",
-  answer: "echo \"$ligne\" | tr ',' '|'"
-},
-{
-  folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S02 : Comment parcourir les fichiers d’un dossier ?",
-  answer: "for f in ~/*; do ... done"
-},
-{
-  folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S02 : Comment vérifier taille > 1Ko ?",
-  answer: "[ $(stat -c%s \"$f\") -gt 1024 ]"
-},
-{
-  folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S03 : Comment générer un hash ?",
-  answer: "sha256sum fichier"
-},
-{
-  folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S03 : Comment comparer deux fichiers ?",
-  answer: "h1=$(sha256sum f1); h2=$(sha256sum f2); [ \"$h1\" = \"$h2\" ]"
-},
-{
-  folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S04 : Comment lire N lignes d’un fichier ?",
-  answer: "i=0; while read -r ligne && [ $i -lt N ]; do ...; i=$((i+1)); done"
-},
-{
-  folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S05 : Comment remplacer espaces multiples ?",
-  answer: "echo \"$ligne\" | tr -s ' ' ';'"
+  subject: "Bash - Explication",
+  question: "S01 : Comment ça marche ?",
+  answer: "while read = lit ligne par ligne | cut -d',' = découpe CSV | variables = récup colonnes | echo = format Markdown"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S06 : Comment extraire user UID home ?",
-  answer: "cut -d':' -f1,3,6 /etc/passwd"
+  subject: "Bash - Explication",
+  question: "S02 : Comment ça marche ?",
+  answer: "ls -l = liste fichiers | grep '^-' = filtre fichiers | read = récup champs | test taille >1024 | sort -nr = tri décroissant"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S07 : Comment lire un champ précis ?",
-  answer: "cut -d':' -f7"
+  subject: "Bash - Explication",
+  question: "S03 : Comment ça marche ?",
+  answer: "for = boucle sur fichiers | * = tous fichiers | cp = copie vers destination"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S08 : Comment créer N dossiers ?",
-  answer: "i=1; while [ $i -le N ]; do mkdir \"dir_$i\"; i=$((i+1)); done"
+  subject: "Bash - Explication",
+  question: "S04 : Comment ça marche ?",
+  answer: "while read = lit mots | tr = transforme en majuscule | compteur + break = limite à 10"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S08 : Comment créer des fichiers vides ?",
-  answer: "touch fichier_A"
+  subject: "Bash - Explication",
+  question: "S05 : Comment ça marche ?",
+  answer: "ls = liste | read = ligne par ligne | tr espace ; = conversion en CSV"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S09 : Comment ignorer erreurs ?",
-  answer: "commande 2>/dev/null"
+  subject: "Bash - Explication",
+  question: "S06 : Comment ça marche ?",
+  answer: "cut -d':' = découpe /etc/passwd | champs 1 3 6 = user UID home | echo format CSV"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S10 : Comment parcourir caractères d’un mot ?",
-  answer: "i=0; while [ $i -lt ${#mot} ]; do lettre=${mot:$i:1}; i=$((i+1)); done"
+  subject: "Bash - Explication",
+  question: "S07 : Comment ça marche ?",
+  answer: "cut = récup shells | sort = trie | uniq -c = compte occurrences"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S11 : Comment lire une entrée utilisateur ?",
-  answer: "read reponse"
+  subject: "Bash - Explication",
+  question: "S08 : Comment ça marche ?",
+  answer: "while = boucle N fois | mkdir -p = crée dossiers | touch = crée fichiers | incrément i"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S11 : Comment comparer deux nombres ?",
-  answer: "[ \"$rep\" -eq \"$secret\" ]"
+  subject: "Bash - Explication",
+  question: "S09 : Comment ça marche ?",
+  answer: "ls -l = permissions | grep '^-' = fichiers | grep w = filtrer écriture"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S12 : Comment éviter doublons fichiers ?",
-  answer: "[ -f \"$nom\" ]"
+  subject: "Bash - Explication",
+  question: "S10 : Comment ça marche ?",
+  answer: "while read = mots | echo -n = sans retour ligne | compteur limite à 5"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S13 : Comment tester lecture fichier ?",
-  answer: "[ -r \"$fichier\" ]"
+  subject: "Bash - Explication",
+  question: "S11 : Comment ça marche ?",
+  answer: "RANDOM = nombre aléatoire | %100 = limite | +1 = intervalle 1-100"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S14 : Comment faire une double boucle ?",
-  answer: "i=1; while [ $i -le N ]; do j=1; while [ $j -le N ]; do ...; j=$((j+1)); done; i=$((i+1)); done"
+  subject: "Bash - Explication",
+  question: "S12 : Comment ça marche ?",
+  answer: "while boucle N fois | RANDOM = nom aléatoire | touch = crée fichiers"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S14 : Comment calculer i*j ?",
-  answer: "$((i * j))"
+  subject: "Bash - Explication",
+  question: "S13 : Comment ça marche ?",
+  answer: "ls -l /etc = liste | grep '^-' = fichiers | sort -k5 -nr = tri par taille"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S15 : Comment faire une factorielle ?",
-  answer: "res=1; i=1; while [ $i -le N ]; do res=$((res*i)); i=$((i+1)); done"
+  subject: "Bash - Explication",
+  question: "S14 : Comment ça marche ?",
+  answer: "double while = lignes/colonnes | calcul i*j | echo grille"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S16 : Comment tester droits lecture ?",
-  answer: "[ -r \"$fichier\" ]"
+  subject: "Bash - Explication",
+  question: "S15 : Comment ça marche ?",
+  answer: "while = multiplication progressive | res = accumulateur"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S17 : Comment lire sortie commande ligne par ligne ?",
-  answer: "commande | while read -r ligne; do ... done"
+  subject: "Bash - Explication",
+  question: "S16 : Comment ça marche ?",
+  answer: "ls -l = permissions | grep pattern r..r..r = lisible par tous"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S18 : Comment filtrer avec condition ?",
-  answer: "if [ \"$val\" -gt 5 ]; then ..."
+  subject: "Bash - Explication",
+  question: "S17 : Comment ça marche ?",
+  answer: "who = utilisateurs | read = découpe champs | echo format CSV"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S19 : Comment simuler un dé ?",
-  answer: "$((RANDOM % 6 + 1))"
+  subject: "Bash - Explication",
+  question: "S18 : Comment ça marche ?",
+  answer: "ps aux = processus | read champs | test CPU >5 | echo filtré"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S19 : Comment compter les 7 ?",
-  answer: "if [ $somme -eq 7 ]; then compteur=$((compteur+1)); fi"
+  subject: "Bash - Explication",
+  question: "S19 : Comment ça marche ?",
+  answer: "RANDOM%6+1 = dé | somme de 2 dés | compteur si 7"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S20 : Comment détecter JJ/MM/AAAA ?",
-  answer: "[[ \"$ligne\" =~ ^[0-9]{2}/[0-9]{2}/[0-9]{4}$ ]]"
+  subject: "Bash - Explication",
+  question: "S20 : Comment ça marche ?",
+  answer: "grep '/' = détecte format | cut = réorganise date | sinon inchangé"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S20 : Comment convertir en AAAAMMJJ ?",
-  answer: "annee=$(cut -d'/' -f3); mois=$(cut -d'/' -f2); jour=$(cut -d'/' -f1)"
+  subject: "Bash - Explication",
+  question: "S21 : Comment ça marche ?",
+  answer: "ls -l = tailles | sort -nr = tri décroissant | head -5 = top 5"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S21 : Comment accumuler une taille ?",
-  answer: "total=$((total + taille))"
+  subject: "Bash - Explication",
+  question: "S23 : Comment ça marche ?",
+  answer: "ls -l = tailles | boucle additionne | total accumulé"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S23 : Comment parcourir fichiers ?",
-  answer: "for f in dossier/*; do ... done"
+  subject: "Bash - Explication",
+  question: "S24 : Comment ça marche ?",
+  answer: "sort par taille | uniq -d = détecte doublons"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S24 : Comment détecter doublons ?",
-  answer: "h=$(sha256sum \"$fichier\")"
+  subject: "Bash - Explication",
+  question: "S25 : Comment ça marche ?",
+  answer: "boucle alphabet | grep lettre | wc -l = compte | sort décroissant"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S25 : Comment tester présence lettre ?",
-  answer: "echo \"$mot\" | grep \"a\""
+  subject: "Bash - Explication",
+  question: "S26 : Comment ça marche ?",
+  answer: "ls -R = récursif | test -x = exécutable | echo résultat"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S26 : Comment tester exécutable ?",
-  answer: "[ -x \"$fichier\" ]"
+  subject: "Bash - Explication",
+  question: "S27 : Comment ça marche ?",
+  answer: "ls = liste | sort -t '.' = séparateur extension | -k2 = tri extension"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S27 : Comment créer un dossier ?",
-  answer: "mkdir nom"
+  question: "S01 : Convertir un CSV en tableau Markdown ?",
+  answer: "while read line; do c1=$(echo \"$line\" | cut -d',' -f1); c2=$(echo \"$line\" | cut -d',' -f2); echo \"| $c1 | $c2 |\"; done < \"$1\""
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S29 : Comment chercher dans un log ?",
-  answer: "grep \"texte\" fichier.log"
+  question: "S02 : Lister fichiers >1Ko triés ?",
+  answer: "ls -l ~ | grep '^-' | while read p l u g s r n; do [ \"$s\" -gt 1024 ] && echo \"$n $s\"; done | sort -k2 -nr"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S30 : Comment exécuter une commande ?",
-  answer: "commande"
+  question: "S03 : Copier fichiers ?",
+  answer: "for f in \"$1\"/*; do cp \"$f\" \"$2\"; done"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S01 : CSV → Markdown",
-  answer: "while read -r ligne; do echo \"| $(echo \"$ligne\" | tr ',' ' | ') |\"; done < fichier"
+  question: "S04 : 10 mots en majuscules ?",
+  answer: "i=0; while read m; do echo \"$m\" | tr '[:lower:]' '[:upper:]'; i=$((i+1)); [ $i -eq 10 ] && break; done < /usr/share/dict/french"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S02 : fichiers >1Ko",
-  answer: "for f in ~/*; do if [ -f \"$f\" ] && [ $(stat -c%s \"$f\") -gt 1024 ]; then echo \"$f\"; fi; done"
+  question: "S05 : Transformer en CSV (simplifié) ?",
+  answer: "ls | while read l; do echo \"$l\" | tr ' ' ';'; done"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S03 : copie + vérif hash",
-  answer: "cp \"$f\" \"$dest\"; h1=$(sha256sum \"$f\"); h2=$(sha256sum \"$dest\"); [ \"$h1\" = \"$h2\" ]"
+  question: "S06 : CSV utilisateurs ?",
+  answer: "while read line; do u=$(echo \"$line\" | cut -d':' -f1); id=$(echo \"$line\" | cut -d':' -f3); d=$(echo \"$line\" | cut -d':' -f6); echo \"$u;$id;$d\"; done < /etc/passwd"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S04 : lire 10 lignes + compter lettres",
-  answer: "i=0; total=0; while read -r l && [ $i -lt 10 ]; do echo \"$l\"; total=$((total + ${#l})); i=$((i+1)); done"
+  question: "S07 : Classer shells ?",
+  answer: "cut -d ':' -f7 /etc/passwd | sort | uniq -c"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S05 : df → CSV",
-  answer: "df | while read -r l; do echo \"$l\" | tr -s ' ' ';'; done"
+  question: "S08 : Créer structure ?",
+  answer: "i=1; while [ $i -le ${2:-10} ]; do mkdir -p \"$1/dir_00$i\"; touch \"$1/dir_00$i/fichier_A\" \"$1/dir_00$i/fichier_B\" \"$1/dir_00$i/fichier_C\"; i=$((i+1)); done"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S06 : /etc/passwd → CSV",
-  answer: "while read -r l; do echo \"$l\" | cut -d':' -f1,3,6; done < /etc/passwd"
+  question: "S09 : Fichiers modifiables ?",
+  answer: "ls -l /usr/bin 2>/dev/null | grep '^-' | grep 'w'"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S07 : classer par shell",
-  answer: "while read -r l; do shell=$(echo \"$l\" | cut -d':' -f7); echo \"$shell\"; done < /etc/passwd"
+  question: "S10 : Phrase de passe ?",
+  answer: "i=0; while read m; do echo -n \"$m \"; i=$((i+1)); [ $i -eq 5 ] && break; done < /usr/share/dict/french"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S08 : créer N dossiers + fichiers",
-  answer: "i=1; while [ $i -le N ]; do mkdir \"dir_$i\"; touch \"dir_$i/fichier_A\"; i=$((i+1)); done"
+  question: "S11 : Nombre aléatoire 1-100 ?",
+  answer: "echo $((RANDOM % 100 + 1))"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S09 : fichiers writable",
-  answer: "for f in /usr/bin/*; do [ -w \"$f\" ] && echo \"$f\"; done 2>/dev/null"
+  question: "S12 : Créer N fichiers ?",
+  answer: "i=0; while [ $i -lt $2 ]; do touch \"$1/$RANDOM\"; i=$((i+1)); done"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S10 : phrase 5 mots + compter lettres",
-  answer: "phrase=\"\"; i=0; while [ $i -lt 5 ]; do read mot; phrase=\"$phrase $mot\"; i=$((i+1)); done"
+  question: "S13 : Fichiers lisibles triés ?",
+  answer: "ls -l /etc 2>/dev/null | grep '^-' | sort -k5 -nr"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S11 : jeu devinette",
-  answer: "secret=$((RANDOM%100+1)); while true; do read rep; if [ $rep -lt $secret ]; then echo plus; elif [ $rep -gt $secret ]; then echo moins; else break; fi; done"
+  question: "S14 : Table de multiplication ?",
+  answer: "i=1; while [ $i -le $1 ]; do j=1; while [ $j -le $1 ]; do echo -n \"$((i*j)) \"; j=$((j+1)); done; echo; i=$((i+1)); done"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S12 : créer fichiers aléatoires",
-  answer: "i=0; while [ $i -lt N ]; do nom=$((RANDOM%10000)); touch \"$nom\"; i=$((i+1)); done"
+  question: "S15 : Factorielle ?",
+  answer: "res=1; i=1; while [ $i -le $1 ]; do res=$((res*i)); i=$((i+1)); done; echo $res"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S13 : fichiers lisibles",
-  answer: "for f in /etc/*; do [ -r \"$f\" ] && echo \"$f\"; done 2>/dev/null"
+  question: "S16 : Fichiers lisibles par autres ?",
+  answer: "ls -l \"$1\" | grep '^-' | grep 'r..r..r'"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S14 : tableau multiplication",
-  answer: "i=1; while [ $i -le N ]; do j=1; while [ $j -le N ]; do echo -n \"$((i*j)) \"; j=$((j+1)); done; echo; i=$((i+1)); done"
+  question: "S17 : Utilisateurs connectés ?",
+  answer: "who | while read u t h r; do echo \"$u;$t;$h\"; done"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S15 : factorielle",
-  answer: "res=1; i=1; while [ $i -le N ]; do res=$((res*i)); i=$((i+1)); done"
+  question: "S18 : Processus gourmands ?",
+  answer: "ps aux | while read u p c m r; do [ \"${c%.*}\" -gt 5 ] && echo \"$u $p\"; done"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S16 : fichiers lisibles par autres",
-  answer: "for f in dossier/*; do [ -r \"$f\" ] && echo \"$f\"; done"
+  question: "S19 : Lancer de dés ?",
+  answer: "i=0; c=0; while [ $i -lt $1 ]; do s=$((RANDOM%6+1 + RANDOM%6+1)); echo $s; [ $s -eq 7 ] && c=$((c+1)); i=$((i+1)); done; echo $c"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S17 : who parsing",
-  answer: "who | while read -r u t h; do echo \"$u;$t;$h\"; done"
+  question: "S20 : Convertir dates ?",
+  answer: "while read d; do echo \"$d\" | grep '/' >/dev/null && echo \"$d\" | cut -d'/' -f3,2,1 --output-delimiter='' || echo \"$d\"; done < \"$1\""
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S18 : filtrer ps",
-  answer: "ps aux | while read -r l; do cpu=$(echo \"$l\" | cut -d' ' -f3); done"
+  question: "S21 : Top 5 dossiers ?",
+  answer: "ls -l \"$1\" | sort -k5 -nr | head -5"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S19 : dés",
-  answer: "de1=$((RANDOM%6+1)); de2=$((RANDOM%6+1)); somme=$((de1+de2))"
+  question: "S23 : Taille totale fichiers ?",
+  answer: "ls -l \"$1\" | grep '^-' | while read p l u g s r n; do total=$((total+s)); done; echo $total"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S20 : dates",
-  answer: "if [[ \"$l\" =~ ^[0-9]{2}/[0-9]{2}/[0-9]{4}$ ]]; then j=$(cut -d'/' -f1); m=$(cut -d'/' -f2); a=$(cut -d'/' -f3); fi"
+  question: "S24 : Doublons (simplifié) ?",
+  answer: "ls -l \"$1\" | sort -k5 | uniq -d"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S21 : du logique",
-  answer: "for d in dossier/*; do taille=$(du \"$d\"); echo \"$taille\"; done"
+  question: "S25 : Occurrences lettres ?",
+  answer: "for l in a b c d e f g h i j k l m n o p q r s t u v w x y z; do c=$(grep -i \"$l\" /usr/share/dict/french | wc -l); echo \"$c $l\"; done | sort -nr"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S23 : somme tailles",
-  answer: "total=0; for f in dossier/*; do taille=$(stat -c%s \"$f\"); total=$((total+taille)); done"
+  question: "S26 : Fichiers exécutables ?",
+  answer: "ls -R \"$1\" | while read f; do [ -x \"$f\" ] && echo \"$f executable\"; done"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S24 : doublons hash",
-  answer: "h=$(sha256sum \"$f\"); comparer avec autres"
+  question: "S27 : Trier par extension ?",
+  answer: "ls \"$1\" | sort -t '.' -k2"
 },
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S25 : compter lettres",
-  answer: "echo \"$mot\" | grep \"a\""
+  question: "S28 : Convertir Markdown en CSV ?",
+  answer: "while read line; do echo \"$line\" | grep '|' >/dev/null && echo \"$line\" | tr -d '|' | tr ' ' ';'; done < \"$1\""
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S26 : exécutable",
-  answer: "[ -x \"$f\" ]"
+  subject: "Bash - Explication",
+  question: "S28 : Comment ça marche ?",
+  answer: "while read line = lit ligne par ligne | grep '|' = filtre les lignes de tableau | tr -d '|' = supprime les séparateurs | tr ' ' ';' = transforme en CSV"
 },
+
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S27 : extension",
-  answer: "nom=$(basename \"$f\"); ext=${nom#*.}"
+  question: "S29 : Analyse du log majposte ?",
+  answer: "grep 'install' /var/log/majposte.sh.log > tmp.txt; wc -l tmp.txt; tail -n 1 /var/log/majposte.sh.log"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S28 : markdown parsing",
-  answer: "grep '|' fichier"
+  subject: "Bash - Explication",
+  question: "S29 : Comment ça marche ?",
+  answer: "grep 'install' = filtre les paquets installés | wc -l = compte | tail -n 1 = dernière ligne du log (dernière mise à jour)"
 },
+
 {
   folder: "Bash",
   subject: "Bash - Pratique",
-  question: "S29 : log analyse",
-  answer: "grep \"install\" fichier.log"
+  question: "S30 : Trier les périphériques PCI ?",
+  answer: "lspci | sort"
 },
 {
   folder: "Bash",
-  subject: "Bash - Pratique",
-  question: "S30 : lspci",
-  answer: "lspci"
+  subject: "Bash - Explication",
+  question: "S30 : Comment ça marche ?",
+  answer: "lspci = liste les périphériques PCI | sort = trie les lignes (par défaut alphabétique, donc classe ou constructeur)"
 },
    
 /* =========================
