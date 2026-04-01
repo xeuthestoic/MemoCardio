@@ -50,7 +50,7 @@ function login() {
         .then(() => {
           initData();
           showPage("dashboard");
-          loadSubjects();
+          loadFolders();
           document.getElementById("username").value = "";
           document.getElementById("password").value = "";
          })
@@ -65,8 +65,25 @@ function login() {
 /* =========================
    DASHBOARD
 ========================= */
-function loadSubjects() {
+function loadFolders() {
     const data = getCards();
+
+    const folders = [...new Set(data.map(c => c.folder))];
+
+    const container = document.getElementById("subjects");
+    container.innerHTML = "";
+
+    folders.forEach(folder => {
+        const div = document.createElement("div");
+        div.innerText = folder;
+        div.onclick = () => openFolder(folder);
+        container.appendChild(div);
+    });
+}
+
+function openFolder(folder) {
+    const data = getCards().filter(c => c.folder === folder);
+
     const subjects = [...new Set(data.map(c => c.subject))];
 
     const container = document.getElementById("subjects");
@@ -75,7 +92,7 @@ function loadSubjects() {
     subjects.forEach(sub => {
         const div = document.createElement("div");
         div.innerText = sub;
-        div.onclick = () => openSubject(sub);
+        div.onclick = () => openSubject(folder, sub);
         container.appendChild(div);
     });
 }
@@ -83,11 +100,14 @@ function loadSubjects() {
 /* =========================
    CARDS
 ========================= */
-function openSubject(subject) {
-    cards = getCards().filter(c => c.subject === subject);
+function openSubject(folder, subject) {
+    cards = getCards().filter(
+        c => c.folder === folder && c.subject === subject
+    );
+
     currentIndex = 0;
 
-    // 🔀 SHUFFLE
+    // shuffle
     for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [cards[i], cards[j]] = [cards[j], cards[i]];
