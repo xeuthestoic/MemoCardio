@@ -1,5 +1,131 @@
 window.DEFAULT_CARDS = [
 
+
+ /* =========================
+     🛜 Systèmes - Adressage IP
+  ========================= */
+
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qu'est-ce qu'une adresse IP ?",
+  answer: "Identifiant unique attribué à un appareil sur un réseau (IPv4)"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qu'est-ce qu'une IP publique ?",
+  answer: "Adresse IP visible sur Internet, utilisée pour communiquer entre réseaux"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Plage des IP publiques ?",
+  answer: "Toutes les IP hors plages privées et réservées"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qu'est-ce qu'une IP privée ?",
+  answer: "Adresse utilisée dans un réseau local, non accessible directement sur Internet"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Plages des IP privées ?",
+  answer: "10.0.0.0/8 | 172.16.0.0/12 | 192.168.0.0/16"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qu'est-ce qu'une adresse APIPA ?",
+  answer: "Adresse auto-attribuée quand aucun serveur DHCP ne répond"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Plage APIPA ?",
+  answer: "169.254.0.0/16"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "À quoi sert APIPA ?",
+  answer: "Permet une communication locale temporaire sans DHCP"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qu'est-ce qu'une adresse multicast ?",
+  answer: "Adresse permettant d'envoyer des données à plusieurs machines en même temps"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Plage multicast ?",
+  answer: "224.0.0.0/4"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qu'est-ce qu'une adresse broadcast ?",
+  answer: "Adresse permettant d'envoyer un message à tous les appareils du réseau"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Adresse broadcast générale ?",
+  answer: "255.255.255.255"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qu'est-ce que le loopback ?",
+  answer: "Adresse utilisée pour tester sa propre machine"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Adresse loopback ?",
+  answer: "127.0.0.0/8 (ex: 127.0.0.1)"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qu'est-ce qu'une IP réservée ?",
+  answer: "Adresse non utilisable pour des hôtes (tests, documentation, etc.)"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Exemple d'IP réservée documentation ?",
+  answer: "192.0.2.0/24"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Qui attribue les IP publiques ?",
+  answer: "Les fournisseurs d'accès Internet (FAI)"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Une IP publique est-elle unique ?",
+  answer: "Oui, elle doit être unique sur Internet"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "À quoi sert le NAT ?",
+  answer: "Permet de faire correspondre plusieurs IP privées à une seule IP publique"
+},
+{
+  folder: "Systèmes",
+  subject: "Adressage IP",
+  question: "Différence IP privée / publique ?",
+  answer: "Privée = réseau local | Publique = Internet"
+},
+
  /* =========================
      🧠 BASH - Pratique
   ========================= */
