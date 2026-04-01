@@ -74,13 +74,14 @@ input {
 }
 
 #backBtn {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
   padding: 10px;
   border-radius: 8px;
   background: #222;
   color: white;
+  z-index: 9999;
 }
 
 /* =========================
